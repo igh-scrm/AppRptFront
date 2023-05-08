@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RotFrontApplication.HelperClass;
+using RotFrontApplication.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,8 @@ namespace RotFrontApplication
         public MainWindow()
         {
             InitializeComponent();
+            NavigateClass.frmNav = FrmMain;
+            FrmMain.Navigate(new AuthPage());
         }
     }
 }

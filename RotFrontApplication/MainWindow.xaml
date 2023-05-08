@@ -19,7 +19,7 @@
         <Grid Grid.Row="1"
               Background="#E4EEF2">
             <Frame
-                Name="FrnMain"
+                Name="FrmMain"
                 NavigationUIVisibility="Hidden"/>
         </Grid>
         <Grid Grid.Row="2" Background="#FFAA41">
