@@ -23,3 +23,5 @@ C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Ro
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\RotFrontApplication.csproj.CopyComplete
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\RotFrontApplication.exe
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\RotFrontApplication.pdb
+C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\Shipment\ShipmentAll.g.cs
+C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\Shipment\ShipmentAll.baml

@@ -1,5 +1,4 @@
 ﻿using RotFrontApplication.HelperClass;
-using RotFrontApplication.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,20 +14,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RotFrontApplication
+namespace RotFrontApplication.Pages.Shipment
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для ShipmentAll.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ShipmentAll : Page
     {
-        public MainWindow()
+        public ShipmentAll()
         {
             InitializeComponent();
-            NavigateClass.frmNav = FrmMain;
-            FrmMain.Navigate(new AuthPage());
+            GridListShipment.ItemsSource = ConnectionPoint.connectPoint.Shipment.ToList();
+        }
 
-            ConnectionPoint.connectPoint = new DbDauevaEntities1();
+        private void BtnViewAccept_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

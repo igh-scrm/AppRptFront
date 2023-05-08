@@ -1,5 +1,8 @@
-﻿using System;
+﻿using RotFrontApplication.HelperClass;
+using RotFrontApplication.Pages.Shipment;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +26,34 @@ namespace RotFrontApplication.Pages
         public AuthPage()
         {
             InitializeComponent();
+        }
+
+        private void BtnAuth_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var data = ConnectionPoint.connectPoint.Users.FirstOrDefault(
+                    x => x.Login == TxbLogin.Text && x.Password == PsbPass.Password 
+                    );
+
+                if (data == null) 
+                {
+                    MessageBox.Show("Такого пользователя нет", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else 
+                {
+                    switch (data.Role_id)
+                    {
+                        case 1:
+                            NavigateClass.frmNav.Navigate(new ShipmentAll());
+                            break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            { 
+
+            }
         }
     }
 }

@@ -44,7 +44,8 @@
                 Background="#0776A0"
                 BorderBrush="#0776A0"
                 Foreground="#FFFFFF"
-                FontWeight="Bold"/>
+                FontWeight="Bold"
+                Click="BtnAuth_Click"/>
         </StackPanel>
     </Grid>
 </Page>
