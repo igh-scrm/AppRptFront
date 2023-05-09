@@ -139,7 +139,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Shipment\ShipmentAll.xaml">
+    <Page Include="Pages\ShipmentAllPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ShipmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -148,8 +152,11 @@
     <Compile Include="Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Shipment\ShipmentAll.xaml.cs">
-      <DependentUpon>ShipmentAll.xaml</DependentUpon>
+    <Compile Include="Pages\ShipmentAllPage.xaml.cs">
+      <DependentUpon>ShipmentAllPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShipmentPage.xaml.cs">
+      <DependentUpon>ShipmentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

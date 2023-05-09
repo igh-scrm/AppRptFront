@@ -1,5 +1,4 @@
 ﻿using RotFrontApplication.HelperClass;
-using RotFrontApplication.Pages.Shipment;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -45,7 +44,7 @@ namespace RotFrontApplication.Pages
                     switch (data.Role_id)
                     {
                         case 1:
-                            NavigateClass.frmNav.Navigate(new ShipmentAll());
+                            NavigateClass.frmNav.Navigate(new ShipmentAllPage());
                             break;
                     }
                 }

@@ -14,14 +14,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RotFrontApplication.Pages.Shipment
+namespace RotFrontApplication.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для ShipmentAll.xaml
+    /// Логика взаимодействия для ShipmentAllPage.xaml
     /// </summary>
-    public partial class ShipmentAll : Page
+    public partial class ShipmentAllPage : Page
     {
-        public ShipmentAll()
+        public ShipmentAllPage()
         {
             InitializeComponent();
             GridListShipment.ItemsSource = ConnectionPoint.connectPoint.Shipment.ToList();
@@ -29,7 +29,7 @@ namespace RotFrontApplication.Pages.Shipment
 
         private void BtnViewAccept_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigateClass.frmNav.Navigate(new ShipmentPage((sender as Button).DataContext as Shipment));
         }
     }
 }
