@@ -38,6 +38,11 @@ namespace RotFrontApplication.Pages
         {
             NavigateClass.frmNav.GoBack();
         }
+
+        private void BtnReject_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateClass.frmNav.Navigate(new RejectPage());
+        }
     }
 }
     

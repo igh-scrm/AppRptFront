@@ -98,6 +98,7 @@
             Foreground="#FFFFFF"/>
             <Button
             Content="ТОВАР БРАКОВАННЫЙ"
+            Click="BtnReject_Click"
             Name="BtnReject"
             Width="140"
             Height="20"
