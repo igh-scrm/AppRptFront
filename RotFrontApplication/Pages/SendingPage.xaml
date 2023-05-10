@@ -1,4 +1,4 @@
-﻿<Page x:Class="RotFrontApplication.Pages.ShipmentPage"
+﻿<Page x:Class="RotFrontApplication.Pages.SendingPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:RotFrontApplication.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ShipmentPage">
+      Title="SendingPage">
 
     <Grid>
         <StackPanel 
@@ -21,44 +21,10 @@
                 </TextBlock>
             </GroupBox>
             <GroupBox 
-                Header="Откуда:">
+                Header="Адрес:">
                 <TextBlock 
-                 Name="TxbFrom"
-                    Background="#FFFFFF">
-                </TextBlock>
-            </GroupBox>
-            <GroupBox 
-                Header="Что пришло:">
-                <TextBlock 
-                 Name="TxbProduct"
-                    Background="#FFFFFF">
-                </TextBlock>
-            </GroupBox>
-            <StackPanel>
-                <GroupBox 
-                Header="Сколько:"
-                Width="100"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Bottom">
-                    <TextBlock 
-                 Name="TxbNs"
-                        Background="#FFFFFF">
-                    </TextBlock>
-                </GroupBox>
-                <GroupBox 
-                Header="Сколько:"
-                Width="500"
-                HorizontalAlignment="Left">
-                    <TextBlock 
-                 Name="TxbCount"
-                        Background="#FFFFFF">
-                    </TextBlock>
-                </GroupBox>
-            </StackPanel>
-            <GroupBox 
-                Header="Дата поступления:">
-                <TextBlock 
-                 Name="TxbExpDate"
+                 Height="50"   
+                 Name="TxbAddress"
                     Background="#FFFFFF">
                 </TextBlock>
             </GroupBox>
@@ -86,10 +52,9 @@
             VerticalAlignment="Bottom"
             Margin="5">
             <Button
-            Content="НАЧАТЬ РАСПРЕДЕЛЕНИЕ"
-            Name="BtnStart"
-            Click="BtnStart_Click"
-            Width="150"
+            Content="ДОСТАВИТЬ"
+            Name="BtnSendStart"
+            Width="100"
             Height="20"
             VerticalAlignment="Bottom"
             HorizontalAlignment="Right"
@@ -98,21 +63,9 @@
             BorderBrush="#0776A0"
             Foreground="#FFFFFF"/>
             <Button
-            Content="ТОВАР БРАКОВАННЫЙ"
-            Click="BtnReject_Click"
-            Name="BtnReject"
-            Width="140"
-            Height="20"
-            VerticalAlignment="Bottom"
-            HorizontalAlignment="Right"
-            Margin="5"
-            Background="#0776A0"
-            BorderBrush="#0776A0"
-            Foreground="#FFFFFF"/>
-            <Button
-            Content="ПРИНЯТО"
-            Name="BtnAccept"
-            Width="50"
+            Content="ДОСТАВЛЕНО"
+            Name="BtnSendEnd"
+            Width="100"
             Height="20"
             VerticalAlignment="Top"
             HorizontalAlignment="Right"

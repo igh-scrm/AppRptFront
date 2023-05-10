@@ -46,6 +46,12 @@ namespace RotFrontApplication.Pages
                         case 1:
                             NavigateClass.frmNav.Navigate(new ShipmentAllPage());
                             break;
+                        case 2:
+                            NavigateClass.frmNav.Navigate(new RequestAllPage());
+                            break;
+                        case 3:
+                            NavigateClass.frmNav.Navigate(new SendingAllPage());
+                            break;
                     }
                 }
             }

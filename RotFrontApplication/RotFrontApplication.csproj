@@ -143,6 +143,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\RequestAllPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RequestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SendingAllPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SendingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ShipmentAllPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -158,6 +174,18 @@
     </Compile>
     <Compile Include="Pages\RejectPage.xaml.cs">
       <DependentUpon>RejectPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RequestAllPage.xaml.cs">
+      <DependentUpon>RequestAllPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RequestPage.xaml.cs">
+      <DependentUpon>RequestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SendingAllPage.xaml.cs">
+      <DependentUpon>SendingAllPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SendingPage.xaml.cs">
+      <DependentUpon>SendingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ShipmentAllPage.xaml.cs">
       <DependentUpon>ShipmentAllPage.xaml</DependentUpon>
