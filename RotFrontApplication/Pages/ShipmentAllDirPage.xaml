@@ -68,7 +68,8 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <StackPanel Width="400"
-                    Height="400">
+                    Height="300"
+                    VerticalAlignment="Top">
                     <GroupBox
                     Header="Поступило сегодня"
                     FontSize="20"
@@ -103,10 +104,21 @@
                         </DataGrid>
                     </GroupBox>
                 </StackPanel>
+                <Button
+                    VerticalAlignment="Bottom"
+                    Name="BtnPrintShip"
+                    Click="BtnPrintShip_Click"
+                    Content="ПЕЧАТЬ"
+                    Width="100"
+                    Background="#0776A0"
+                    Foreground="#FFFFFF"
+                    FontSize="15"
+                    FontWeight="Bold"/>
             </Grid>
             <Grid Grid.Column="1">
                 <StackPanel Width="400"
-                    Height="400">
+                    Height="350"
+                    VerticalAlignment="Top">
                     <GroupBox
                     Header="Не принято"
                     FontSize="20"

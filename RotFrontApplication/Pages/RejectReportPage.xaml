@@ -39,6 +39,17 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </GroupBox>
+            <Button
+                    VerticalAlignment="Bottom"
+                    Name="BtnPrintRejectReport"
+                    Click="BtnPrintRejectReport_Click"
+                    Content="ПЕЧАТЬ"
+                    Width="100"
+                    Background="#0776A0"
+                    Foreground="#FFFFFF"
+                    FontSize="15"
+                    FontWeight="Bold"
+                    Margin="5"/>
         </StackPanel>
         <Button
             Content="Назад"

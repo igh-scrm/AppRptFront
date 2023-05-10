@@ -46,5 +46,14 @@ namespace RotFrontApplication.Pages
         {
             NavigateClass.frmNav.Navigate(new RejectReportPage());
         }
+
+        private void BtnPrintShip_Click(object sender, RoutedEventArgs e)
+        {
+            PrintDialog print = new PrintDialog();
+            if (print.ShowDialog() == true)
+            {
+                print.PrintVisual(GridListShipmentDir, "Печать");
+            }
+        }
     }
 }

@@ -34,5 +34,6 @@ namespace RotFrontApplication.Pages
         {
             NavigateClass.frmNav.GoBack();
         }
+
     }
 }

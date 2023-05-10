@@ -35,6 +35,7 @@
                     Background="#FFFFFF">
                 </TextBlock>
             </GroupBox>
+           
         </StackPanel>
         <Button
             Content="Назад"
