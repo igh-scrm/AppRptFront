@@ -32,7 +32,7 @@ namespace RotFrontApplication.Pages
 
         private void BtnViewAccept_Click(object sender, RoutedEventArgs e)
         {
-            NavigateClass.frmNav.Navigate(new RequestPage((sender as Button).DataContext as RequestForSending));
+            NavigateClass.frmNav.Navigate(new OneRequestDirPage((sender as Button).DataContext as RequestForSending));
 
         }
 
@@ -43,7 +43,7 @@ namespace RotFrontApplication.Pages
 
         private void BtnViewAccept0_Click(object sender, RoutedEventArgs e)
         {
-            NavigateClass.frmNav.Navigate(new RequestPage((sender as Button).DataContext as RequestForSending));
+            NavigateClass.frmNav.Navigate(new OneRequestDirPage((sender as Button).DataContext as RequestForSending));
 
         }
 

@@ -120,7 +120,8 @@
                     BorderBrush="Transparent"
                     Foreground="#FFFFFF"
                     FontSize="15"
-                    FontWeight="Bold"/>
+                    FontWeight="Bold"
+                    Margin="10"/>
             </Grid>
             <Grid Grid.Column="1">
                 <StackPanel Width="400"
@@ -170,7 +171,8 @@
                     BorderBrush="Transparent"
                     Foreground="#FFFFFF"
                     FontSize="15"
-                    FontWeight="Bold"/>
+                    FontWeight="Bold"
+                    Margin="10"/>
             </Grid>
         </Grid>
     </Grid>

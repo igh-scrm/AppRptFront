@@ -32,13 +32,13 @@ namespace RotFrontApplication.Pages
 
         private void BtnViewAccept_Click(object sender, RoutedEventArgs e)
         {
-        NavigateClass.frmNav.Navigate(new ShipmentPage((sender as Button).DataContext as Shipment));
+        NavigateClass.frmNav.Navigate(new OneShipmentDirPage((sender as Button).DataContext as Shipment));
 
         }
 
         private void BtnViewAccept0_Click(object sender, RoutedEventArgs e)
         {
-            NavigateClass.frmNav.Navigate(new ShipmentPage((sender as Button).DataContext as Shipment));
+            NavigateClass.frmNav.Navigate(new OneShipmentDirPage((sender as Button).DataContext as Shipment));
 
         }
 
