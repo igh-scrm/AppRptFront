@@ -61,5 +61,10 @@ namespace RotFrontApplication.Pages
             NavigateClass.frmNav.Navigate(new RequestAllDirPage());
         }
 
+        private void BtnSend_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateClass.frmNav.Navigate(new SendingAllDirPage());
+        }
+
     }
 }

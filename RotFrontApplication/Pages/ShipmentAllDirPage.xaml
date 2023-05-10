@@ -48,7 +48,8 @@
                 FontWeight="Bold"
                 BorderBrush="Transparent"
                 Content="ДОСТАВКИ"
-                Name="BtnSend"/>
+                Name="BtnSend"
+                Click="BtnSend_Click"/>
             <Button
                 Width="180"
                 Height="30"

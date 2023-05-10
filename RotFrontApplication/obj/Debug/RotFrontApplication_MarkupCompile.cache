@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\App.xaml
-161664103114
+191995549821
 22118640721
-39-1015652968
+42-145340803
 18-165291585
-MainWindow.xaml;Pages\AuthPage.xaml;Pages\OneRequestDirPage.xaml;Pages\OneShipmentDirPage.xaml;Pages\RejectOneReport.xaml;Pages\RejectPage.xaml;Pages\RejectReportPage.xaml;Pages\RequestAllDirPage.xaml;Pages\RequestAllPage.xaml;Pages\RequestPage.xaml;Pages\SendingAllPage.xaml;Pages\SendingPage.xaml;Pages\ShipmentAllDirPage.xaml;Pages\ShipmentAllPage.xaml;Pages\ShipmentDirPage.xaml;Pages\ShipmentPage.xaml;
+MainWindow.xaml;Pages\AuthPage.xaml;Pages\CreateRequestPage.xaml;Pages\OneRequestDirPage.xaml;Pages\OneSendingDirPage.xaml;Pages\OneShipmentDirPage.xaml;Pages\RejectOneReport.xaml;Pages\RejectPage.xaml;Pages\RejectReportPage.xaml;Pages\RequestAllDirPage.xaml;Pages\RequestAllPage.xaml;Pages\RequestPage.xaml;Pages\SendingAllDirPage.xaml;Pages\SendingAllPage.xaml;Pages\SendingPage.xaml;Pages\ShipmentAllDirPage.xaml;Pages\ShipmentAllPage.xaml;Pages\ShipmentDirPage.xaml;Pages\ShipmentPage.xaml;
 
 False
 

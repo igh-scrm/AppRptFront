@@ -139,7 +139,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CreateRequestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\OneRequestDirPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OneSendingDirPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -168,6 +176,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\RequestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SendingAllDirPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,8 +212,14 @@
     <Compile Include="Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CreateRequestPage.xaml.cs">
+      <DependentUpon>CreateRequestPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\OneRequestDirPage.xaml.cs">
       <DependentUpon>OneRequestDirPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OneSendingDirPage.xaml.cs">
+      <DependentUpon>OneSendingDirPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\OneShipmentDirPage.xaml.cs">
       <DependentUpon>OneShipmentDirPage.xaml</DependentUpon>
@@ -223,6 +241,9 @@
     </Compile>
     <Compile Include="Pages\RequestPage.xaml.cs">
       <DependentUpon>RequestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SendingAllDirPage.xaml.cs">
+      <DependentUpon>SendingAllDirPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SendingAllPage.xaml.cs">
       <DependentUpon>SendingAllPage.xaml</DependentUpon>

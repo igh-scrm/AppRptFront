@@ -1,4 +1,4 @@
-﻿<Page x:Class="RotFrontApplication.Pages.RequestAllDirPage"
+﻿<Page x:Class="RotFrontApplication.Pages.SendingAllDirPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:RotFrontApplication.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="RequestAllDirPage">
+      Title="SendingAllDirPage">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -37,7 +37,8 @@
                 FontWeight="Bold"
                 BorderBrush="Transparent"
                 Content="ЗАЯВКИ НА ОТПРАВКУ"
-                Name="BtnRequest"/>
+                Name="BtnRequest"
+                Click="BtnRequest_Click"/>
             <Button
                 Width="150"
                 Height="30"
@@ -48,8 +49,7 @@
                 FontWeight="Bold"
                 BorderBrush="Transparent"
                 Content="ДОСТАВКИ"
-                Name="BtnSend"
-                Click="BtnSend_Click"/>
+                Name="BtnSend"/>
             <Button
                 Width="180"
                 Height="30"
@@ -73,23 +73,29 @@
                 <ColumnDefinition Width="50*"/>
                 <ColumnDefinition Width="50*"/>
             </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <StackPanel Width="400"
                     Height="300"
                     VerticalAlignment="Top">
                     <GroupBox
-                    Header="Собраные"
+                    Header="Отправленые"
                     FontSize="20"
                     Margin="5">
                         <DataGrid 
-                    Name ="GridListRequestDir" 
+                    Name ="GridListSendDir" 
                     AutoGenerateColumns="False" 
                     IsReadOnly="True"
                         Margin="5"
                         FontSize="10">
                             <DataGrid.Columns>
                                 <DataGridTextColumn
-                            Header="Номер заявки"
+                            Header="Номер отправки"
                             Binding="{Binding id}" 
                             Width="*"/>
                                 <DataGridTemplateColumn Width="*">
@@ -113,8 +119,8 @@
                 </StackPanel>
                 <Button
                     VerticalAlignment="Bottom"
-                    Name="BtnPrintRequest"
-                    Click="BtnPrintRequest_Click"
+                    Name="BtnPrintSend"
+                    Click="BtnPrintSend_Click"
                     Content="ПЕЧАТЬ"
                     Width="100"
                     Background="#0776A0"
@@ -129,18 +135,18 @@
                     Height="350"
                     VerticalAlignment="Top">
                     <GroupBox
-                    Header="Не собрано"
+                    Header="Не отправлено"
                     FontSize="20"
                     Margin="5">
                         <DataGrid 
-                    Name ="GridListRequestDir0" 
+                    Name ="GridListSendDir0" 
                     AutoGenerateColumns="False" 
                     IsReadOnly="True"
                         Margin="5"
                         FontSize="10">
                             <DataGrid.Columns>
                                 <DataGridTextColumn
-                            Header="Номер заявки"
+                            Header="Номер отправки"
                             Binding="{Binding id}" 
                             Width="*"/>
                                 <DataGridTemplateColumn Width="*">
@@ -149,7 +155,7 @@
                                             <StackPanel>
                                                 <Button 
                                             Name="BtnViewAccept0"
-                                            Click="BtnViewAccept0_Click"
+                                                    Click="BtnViewAccept0_Click"
                                             Content="Посмотреть" 
                                             BorderThickness="0"
                                             Background="#F5EEE6"
@@ -168,8 +174,8 @@
                     HorizontalAlignment="Center">
                     <Button
                     VerticalAlignment="Bottom"
-                    Name="BtnPrintRequest0"
-                    Click="BtnPrintRequest0_Click"
+                    Name="BtnPrintSend0"
+                        Click="BtnPrintSend0_Click"
                     Content="ПЕЧАТЬ"
                     Width="100"
                     Background="#0776A0"
@@ -182,7 +188,6 @@
                     VerticalAlignment="Bottom"
                     Content="СОЗДАТЬ ЗАЯВКУ"
                     Name="BtnCreateRequest"
-                    Click="BtnCreateRequest_Click"
                     Width="150"
                     Background="#0776A0"
                     BorderBrush="Transparent"

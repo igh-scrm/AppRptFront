@@ -64,5 +64,15 @@ namespace RotFrontApplication.Pages
                 print.PrintVisual(GridListRequestDir0, "Печать");
             }
         }
+
+        private void BtnSend_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateClass.frmNav.Navigate(new SendingAllDirPage());
+        }
+
+        private void BtnCreateRequest_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateClass.frmNav.Navigate(new CreateRequestPage());
+        }
     }
 }
