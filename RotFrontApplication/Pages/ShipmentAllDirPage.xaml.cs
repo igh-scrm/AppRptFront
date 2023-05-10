@@ -41,5 +41,10 @@ namespace RotFrontApplication.Pages
             NavigateClass.frmNav.Navigate(new ShipmentPage((sender as Button).DataContext as Shipment));
 
         }
+
+        private void BtnReject_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateClass.frmNav.Navigate(new RejectReportPage());
+        }
     }
 }

@@ -41,3 +41,7 @@ C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pa
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\ShipmentAllDirPage.baml
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\ShipmentDirPage.g.cs
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\ShipmentDirPage.baml
+C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\RejectReportPage.g.cs
+C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\RejectReportPage.baml
+C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\RejectOneReport.g.cs
+C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\RejectOneReport.baml

@@ -139,7 +139,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\RejectOneReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RejectPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RejectReportPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,8 +188,14 @@
     <Compile Include="Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\RejectOneReport.xaml.cs">
+      <DependentUpon>RejectOneReport.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RejectPage.xaml.cs">
       <DependentUpon>RejectPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RejectReportPage.xaml.cs">
+      <DependentUpon>RejectReportPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RequestAllPage.xaml.cs">
       <DependentUpon>RequestAllPage.xaml</DependentUpon>
