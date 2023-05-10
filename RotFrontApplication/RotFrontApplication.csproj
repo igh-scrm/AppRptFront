@@ -159,7 +159,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ShipmentAllDirPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ShipmentAllPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ShipmentDirPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,8 +195,14 @@
     <Compile Include="Pages\SendingPage.xaml.cs">
       <DependentUpon>SendingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ShipmentAllDirPage.xaml.cs">
+      <DependentUpon>ShipmentAllDirPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ShipmentAllPage.xaml.cs">
       <DependentUpon>ShipmentAllPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShipmentDirPage.xaml.cs">
+      <DependentUpon>ShipmentDirPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ShipmentPage.xaml.cs">
       <DependentUpon>ShipmentPage.xaml</DependentUpon>
