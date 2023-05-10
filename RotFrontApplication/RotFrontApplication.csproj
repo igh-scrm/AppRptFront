@@ -151,6 +151,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\RequestAllDirPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RequestAllPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -196,6 +200,9 @@
     </Compile>
     <Compile Include="Pages\RejectReportPage.xaml.cs">
       <DependentUpon>RejectReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RequestAllDirPage.xaml.cs">
+      <DependentUpon>RequestAllDirPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RequestAllPage.xaml.cs">
       <DependentUpon>RequestAllPage.xaml</DependentUpon>
