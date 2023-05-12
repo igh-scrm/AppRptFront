@@ -40,14 +40,6 @@
                     </TextBox>
                 </GroupBox>
             </StackPanel>
-            <GroupBox Header="Собрать до:"
-                      Margin="5">
-                <TextBlock
-                    Name="TxbCollectUpTo"
-                    Width="300"
-                    HorizontalAlignment="Left"
-                    Background="White"/>
-            </GroupBox>
             <GroupBox Header="Ответственный:"
                       Margin="5">
                 <ComboBox

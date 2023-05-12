@@ -98,12 +98,23 @@
                                         <DataTemplate>
                                             <StackPanel>
                                                 <Button 
-                                            Name="BtnViewAccept"
-                                            Click="BtnViewAccept_Click"
-                                            Content="Посмотреть" 
-                                            BorderThickness="0"
-                                            Background="#F5EEE6"
-                                            />
+                                                    Name="BtnViewAccept"
+                                                    Click="BtnViewAccept_Click"
+                                                    Content="Посмотреть" 
+                                                    BorderThickness="0"
+                                                    Background="#F5EEE6"/>
+                                                <Button
+                                                    Name="BtnDelete"
+                                                    Click="BtnDelete_Click"
+                                                    Content="Удалить"
+                                                    BorderThickness="0"
+                                                    Background="White"/>
+                                                <Button
+                                                    Name="BtnEdit"
+                                                    Content="Изменить"
+                                                    BorderBrush="Transparent"
+                                                    Background="White"
+                                                    Click="BtnEdit_Click"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
