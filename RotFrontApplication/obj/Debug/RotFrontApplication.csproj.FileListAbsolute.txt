@@ -67,3 +67,5 @@ C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pa
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\OneSendEditDirPage.baml
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\CreateSendPage.g.cs
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\CreateSendPage.baml
+C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\OneRejectEditDirPage.g.cs
+C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\OneRejectEditDirPage.baml

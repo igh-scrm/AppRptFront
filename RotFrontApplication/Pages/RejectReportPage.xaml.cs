@@ -47,5 +47,50 @@ namespace RotFrontApplication.Pages
                 print.PrintVisual(GridListReject, "Печать");
             }
         }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (GridListReject.SelectedItems.Count > 0)
+                {
+                    var idUser = (sender as Button).DataContext as Reject;
+                    var item = ConnectionPoint.connectPoint.Reject.Where(x => x.id == idUser.id).Single();
+                    ConnectionPoint.connectPoint.Reject.Remove(item);
+
+                    ConnectionPoint.connectPoint.SaveChanges();
+                    MessageBox.Show(
+                        "Данные о заказе успешно удалены!",
+                        "Уведомление",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information
+                        );
+                    GridListReject.ItemsSource = ConnectionPoint.connectPoint.Reject.ToList();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Данных в таблице нет!",
+                        "Уведомление",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information
+                        );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Критическая работа приложения: " + ex.Message.ToLower(),
+                    "Уведомление",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error
+                    );
+            }
+        }
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateClass.frmNav.Navigate(new OneRejectEditDirPage((sender as Button).DataContext as Reject));
+        }
     }
 }

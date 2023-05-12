@@ -21,6 +21,10 @@
                             Header="Номер отчета"
                             Binding="{Binding id}" 
                             Width="*"/>
+                        <DataGridTextColumn
+                            Header="Номер поставки"
+                            Binding="{Binding Shipment_id}"
+                            Width="*"/>
                         <DataGridTemplateColumn Width="*">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -30,8 +34,19 @@
                                             Click="BtnViewAccept_Click"
                                             Content="Посмотреть" 
                                             BorderThickness="0"
-                                            Background="#F5EEE6"
-                                            />
+                                            Background="#F5EEE6"/>
+                                        <Button
+                                            Name="BtnDelete"
+                                            Click="BtnDelete_Click"
+                                            Content="Удалить"
+                                            BorderThickness="0"
+                                            Background="White"/>
+                                        <Button
+                                            Name="BtnEdit"
+                                            Content="Изменить"
+                                            BorderBrush="Transparent"
+                                            Background="White"
+                                            Click="BtnEdit_Click"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
