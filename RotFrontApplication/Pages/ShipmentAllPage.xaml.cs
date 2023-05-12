@@ -21,10 +21,12 @@ namespace RotFrontApplication.Pages
     /// </summary>
     public partial class ShipmentAllPage : Page
     {
-        public ShipmentAllPage()
+        public ShipmentAllPage(Users authData)
         {
             InitializeComponent();
-            GridListShipment.ItemsSource = ConnectionPoint.connectPoint.Shipment.ToList();
+
+            GridListShipment.ItemsSource = ConnectionPoint.connectPoint.Shipment.Where(x => x.Status == 0 && x.ToAccept == authData.id).ToList();
+
         }
 
         private void BtnViewAccept_Click(object sender, RoutedEventArgs e)

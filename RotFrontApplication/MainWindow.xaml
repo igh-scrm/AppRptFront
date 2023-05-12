@@ -15,10 +15,24 @@
 
         <Grid Grid.Row="0"
               Background="#0776A0">
+            <Button
+                Width="70"
+                Height="20"
+                HorizontalAlignment="Right"
+                Margin="5"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                Content="ВЫЙТИ"
+                Foreground="White"
+                FontWeight="Bold"
+                Visibility="Collapsed"
+                Name="BtnExit"
+                Click="BtnExit_Click"/>
         </Grid>
         <Grid Grid.Row="1"
               Background="#E4EEF2">
             <Frame
+                ContentRendered="Window_ContentRendered"
                 Name="FrmMain"
                 NavigationUIVisibility="Hidden"/>
         </Grid>

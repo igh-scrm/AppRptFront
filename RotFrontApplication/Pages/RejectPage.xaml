@@ -16,11 +16,9 @@
             Height="300">
             <GroupBox Header="Номер поставки:"
                       Margin="5">
-                <TextBlock
-                    Name="TxbNumberShipment"
-                    Width="150"
-                    HorizontalAlignment="Left"
-                    Background="White"/>
+                <ComboBox 
+                    Name="CmbNumberOfShipment"
+                    />
             </GroupBox>
             <GroupBox Header="Опишите брак:"
                       Margin="5">

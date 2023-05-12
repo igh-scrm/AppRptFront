@@ -69,5 +69,10 @@ namespace RotFrontApplication.Pages
                 print.PrintVisual(GridListSendDir0, "Печать");
             }
         }
+
+        private void BtnReject_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateClass.frmNav.Navigate(new RejectReportPage());
+        }
     }
 }

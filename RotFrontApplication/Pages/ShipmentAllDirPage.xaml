@@ -73,7 +73,7 @@
                     Height="300"
                     VerticalAlignment="Top">
                     <GroupBox
-                    Header="Поступило сегодня"
+                    Header="Принятые"
                     FontSize="20"
                     Margin="5">
                         <DataGrid 
@@ -113,6 +113,7 @@
                     Content="ПЕЧАТЬ"
                     Width="100"
                     Background="#0776A0"
+                    BorderBrush="Transparent"
                     Foreground="#FFFFFF"
                     FontSize="15"
                     FontWeight="Bold"

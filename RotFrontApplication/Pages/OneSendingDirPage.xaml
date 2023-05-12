@@ -21,6 +21,27 @@
                 </TextBlock>
             </GroupBox>
             <GroupBox 
+                Header="№ Заявки">
+                <TextBlock 
+                 Name="TxbNumberRequest"
+                    Background="#FFFFFF">
+                </TextBlock>
+            </GroupBox>
+            <GroupBox 
+                Header="Ответственный">
+                <TextBlock 
+                 Name="TxbResponsible"
+                    Background="#FFFFFF">
+                </TextBlock>
+            </GroupBox>
+            <GroupBox 
+                Header="Дата">
+                <TextBlock 
+                 Name="TxbDate"
+                    Background="#FFFFFF">
+                </TextBlock>
+            </GroupBox>
+            <GroupBox 
                 Header="Адрес:">
                 <TextBlock 
                  Height="50"   

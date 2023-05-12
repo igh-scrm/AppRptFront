@@ -24,7 +24,9 @@ namespace RotFrontApplication.Pages
         public RejectPage()
         {
             InitializeComponent();
-            
+            CmbNumberOfShipment.DisplayMemberPath = "Date";
+            CmbNumberOfShipment.SelectedValuePath = "id";
+            CmbNumberOfShipment.ItemsSource = ConnectionPoint.connectPoint.Shipment.ToList();
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -37,7 +39,7 @@ namespace RotFrontApplication.Pages
             try
             {
                 Reject reject = new Reject();
-                reject.Shipment_id = 23;
+                reject.Shipment_id = Convert.ToInt32(CmbNumberOfShipment.SelectedValue);
                 reject.Reason = TxbReason.Text;
 
                 ConnectionPoint.connectPoint.Reject.Add(reject);

@@ -23,7 +23,6 @@
             <GroupBox 
                 Header="Номер поставки:">
                 <TextBlock 
-                 Height="50"   
                  Name="TxbNumberShip"
                     Background="#FFFFFF">
                 </TextBlock>
@@ -32,7 +31,8 @@
                 Header="Причина:">
                 <TextBlock 
                  Name="TxbReason"
-                    Background="#FFFFFF">
+                 Height="50"   
+                 Background="#FFFFFF">
                 </TextBlock>
             </GroupBox>
            

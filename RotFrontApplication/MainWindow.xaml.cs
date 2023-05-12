@@ -29,6 +29,34 @@ namespace RotFrontApplication
             FrmMain.Navigate(new AuthPage());
 
             ConnectionPoint.connectPoint = new DbDauevaEntities1();
+            
+        }
+
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
+        }
+
+        private void Window_ContentRendered(object sender, EventArgs e)
+        {
+
+            if (NavigateClass.frmNav == null)
+            {
+                BtnExit.Visibility = Visibility.Visible;
+            }
+            else {
+                BtnExit.Visibility = Visibility.Collapsed;
+            }
+
+            if (FrmMain.CanGoBack)
+            {
+                BtnExit.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BtnExit.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

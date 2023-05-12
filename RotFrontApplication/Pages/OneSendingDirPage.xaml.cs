@@ -25,6 +25,9 @@ namespace RotFrontApplication.Pages
         {
             InitializeComponent();
             TxbNumber.Text = sending.id.ToString();
+            TxbNumberRequest.Text = sending.Request_id.ToString();
+            TxbResponsible.Text = sending.Users.Name;
+            TxbDate.Text = sending.Date.ToString();
             TxbAddress.Text = sending.Destination.Address.ToString();
             TxbStatus.Text = sending.Status.ToString();
         }

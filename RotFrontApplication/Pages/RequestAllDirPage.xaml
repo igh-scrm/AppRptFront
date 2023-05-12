@@ -60,7 +60,8 @@
                 FontWeight="Bold"
                 BorderBrush="Transparent"
                 Content="ОТЧЕТ ПО БРАКУ"
-                Name="BtnReject"/>
+                Name="BtnReject"
+                Click="BtnReject_Click"/>
         </StackPanel>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>

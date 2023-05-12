@@ -44,7 +44,7 @@ namespace RotFrontApplication.Pages
                     switch (data.Role_id)
                     {
                         case 1:
-                            NavigateClass.frmNav.Navigate(new ShipmentAllPage());
+                            NavigateClass.frmNav.Navigate(new ShipmentAllPage(data));
                             break;
                         case 2:
                             NavigateClass.frmNav.Navigate(new RequestAllPage());

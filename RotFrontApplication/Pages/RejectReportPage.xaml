@@ -46,6 +46,7 @@
                     Content="ПЕЧАТЬ"
                     Width="100"
                     Background="#0776A0"
+                    BorderBrush="#0776A0"
                     Foreground="#FFFFFF"
                     FontSize="15"
                     FontWeight="Bold"
