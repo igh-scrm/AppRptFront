@@ -24,7 +24,7 @@ namespace RotFrontApplication.Pages
         public RejectPage()
         {
             InitializeComponent();
-            CmbNumberOfShipment.DisplayMemberPath = "Date";
+            CmbNumberOfShipment.DisplayMemberPath = "id";
             CmbNumberOfShipment.SelectedValuePath = "id";
             CmbNumberOfShipment.ItemsSource = ConnectionPoint.connectPoint.Shipment.ToList();
         }

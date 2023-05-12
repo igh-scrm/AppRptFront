@@ -98,6 +98,18 @@
                                             BorderThickness="0"
                                             Background="#F5EEE6"
                                             />
+                                                <Button
+                                                    Name="BtnDelete"
+                                                    Click="BtnDelete_Click"
+                                                    Content="Удалить"
+                                                    BorderThickness="0"
+                                                    Background="White"/>
+                                                <Button
+                                                    Name="BtnEdit"
+                                                    Click="BtnEdit_Click"
+                                                    Content="Изменить"
+                                                    BorderBrush="Transparent"
+                                                    Background="White"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
@@ -149,6 +161,18 @@
                                             BorderThickness="0"
                                             Background="#F5EEE6"
                                             />
+                                                <Button
+                                                    Name="BtnDelete"
+                                                    Click="BtnDelete_Click_1"
+                                                    Content="Удалить"
+                                                    BorderThickness="0"
+                                                    Background="White"/>
+                                                <Button
+                                                    Name="BtnEdit"
+                                                    Click="BtnEdit_Click_1"
+                                                    Content="Изменить"
+                                                    BorderBrush="Transparent"
+                                                    Background="White"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
@@ -157,6 +181,18 @@
                         </DataGrid>
                     </GroupBox>
                 </StackPanel>
+                <Button
+                    VerticalAlignment="Bottom"
+                    Name="BtnCreateShip"
+                    Click="BtnCreateShip_Click"
+                    Content="ДОБАВИТЬ ПОСТАВКУ"
+                    Width="180"
+                    Background="#0776A0"
+                    BorderBrush="Transparent"
+                    Foreground="#FFFFFF"
+                    FontSize="15"
+                    FontWeight="Bold"
+                    Margin="10"/>
             </Grid>
         </Grid>
     </Grid>

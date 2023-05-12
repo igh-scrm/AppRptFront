@@ -52,17 +52,6 @@
             VerticalAlignment="Bottom"
             Margin="5">
             <Button
-            Content="ДОСТАВИТЬ"
-            Name="BtnSendStart"
-            Width="100"
-            Height="20"
-            VerticalAlignment="Bottom"
-            HorizontalAlignment="Right"
-            Margin="5"
-            Background="#0776A0"
-            BorderBrush="#0776A0"
-            Foreground="#FFFFFF"/>
-            <Button
             Content="ДОСТАВЛЕНО"
             Name="BtnSendEnd"
             Width="100"

@@ -72,21 +72,9 @@
             VerticalAlignment="Bottom"
             Margin="5">
             <Button
-            Content="НАЧАТЬ СБОРКУ"
-            Name="BtnStart"
-            Click="BtnStart_Click"
-            Width="150"
-            Height="20"
-            VerticalAlignment="Bottom"
-            HorizontalAlignment="Right"
-            Margin="5"
-            Background="#0776A0"
-            BorderBrush="#0776A0"
-            Foreground="#FFFFFF"/>
-            <Button
-            Content="ПРИНЯТО"
+            Content="СОБРАНОы"
             Name="BtnAccept"
-            Width="50"
+            Width="70"
             Height="20"
             VerticalAlignment="Top"
             HorizontalAlignment="Right"

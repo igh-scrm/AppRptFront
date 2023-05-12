@@ -45,9 +45,23 @@ namespace RotFrontApplication.Pages
             NavigateClass.frmNav.Navigate(new RejectPage());
         }
 
-        private void BtnStart_Click(object sender, RoutedEventArgs e)
+        private void BtnAccept_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Shipment shipment = new Shipment();
+                shipment.Status = 1;
 
+                ConnectionPoint.connectPoint.Shipment.AddOrUpdate(shipment);
+                ConnectionPoint.connectPoint.SaveChanges();
+                MessageBox.Show("Все кул!");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Критическая обработка");
+            }
         }
     }
 }

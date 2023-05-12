@@ -159,6 +159,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\OneShipmentEditDirPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RejectOneReport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -230,6 +234,9 @@
     </Compile>
     <Compile Include="Pages\OneShipmentDirPage.xaml.cs">
       <DependentUpon>OneShipmentDirPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OneShipmentEditDirPage.xaml.cs">
+      <DependentUpon>OneShipmentEditDirPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RejectOneReport.xaml.cs">
       <DependentUpon>RejectOneReport.xaml</DependentUpon>

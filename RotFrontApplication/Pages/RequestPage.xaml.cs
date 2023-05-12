@@ -36,9 +36,5 @@ namespace RotFrontApplication.Pages
             NavigateClass.frmNav.GoBack();
         }
 
-        private void BtnStart_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
