@@ -156,5 +156,10 @@ namespace RotFrontApplication.Pages
             NavigateClass.frmNav.Navigate(new OneShipmentEditDirPage((sender as Button).DataContext as Shipment));
 
         }
+
+        private void BtnCreateShip_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateClass.frmNav.Navigate(new CreateShipmentPage());
+        }
     }
 }

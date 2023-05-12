@@ -9,6 +9,68 @@
       Title="CreateShipmentPage">
 
     <Grid>
-        
+        <StackPanel 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Width="300">
+            <GroupBox 
+                Header="Откуда:">
+                <ComboBox
+                        Name="CmbFrom"/>
+            </GroupBox>
+            <GroupBox 
+                Header="Что пришло:">
+                <ComboBox
+                        Name="CmbProduct"/>
+            </GroupBox>
+            <StackPanel>
+                <GroupBox 
+                Header="СИ:"
+                Width="100"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom">
+                    <ComboBox
+                            Name="CmbNs"/>
+                </GroupBox>
+                <GroupBox 
+                Header="Сколько:"
+                Width="300"
+                HorizontalAlignment="Left">
+                    <TextBox 
+                 Name="TxbCount"
+                        Background="#FFFFFF">
+                    </TextBox>
+                </GroupBox>
+            </StackPanel>
+            <GroupBox 
+                Header="Дата поступления:">
+                <TextBlock 
+                 Name="TxbExpDate"
+                    Background="#FFFFFF">
+                </TextBlock>
+            </GroupBox>
+            <Button
+                Content="ДОБАВИТЬ"
+                Name="BtnAdd"
+                Click="BtnAdd_Click"
+                Width="100"
+                Height="20"
+                Margin="10"
+                Background="#0776A0"
+                BorderBrush="Transparent"
+                Foreground="White"/>
+        </StackPanel>
+        <Button
+                Width="60"
+                Height="20"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Margin="30"
+                Content="Назад"
+                Background="#0776A0"
+                BorderBrush="Transparent"
+                Foreground="White"
+                Name="BtnBack"
+                Click="BtnBack_Click"/>
     </Grid>
 </Page>

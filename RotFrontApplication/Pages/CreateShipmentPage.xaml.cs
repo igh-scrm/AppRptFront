@@ -1,5 +1,7 @@
-﻿using System;
+﻿using RotFrontApplication.HelperClass;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,45 @@ namespace RotFrontApplication.Pages
         public CreateShipmentPage()
         {
             InitializeComponent();
+            CmbFrom.DisplayMemberPath = "CompanyName";
+            CmbFrom.SelectedValuePath = "id";
+            CmbFrom.ItemsSource = ConnectionPoint.connectPoint.Suppliers.ToList();
+
+            CmbProduct.DisplayMemberPath = "Product_id";
+            CmbProduct.SelectedValuePath = "id";
+            CmbProduct.ItemsSource = ConnectionPoint.connectPoint.Warehouse.ToList();
+
+            CmbNs.DisplayMemberPath = "Name";
+            CmbNs.SelectedValuePath = "id";
+            CmbNs.ItemsSource = ConnectionPoint.connectPoint.Ns.ToList();
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Shipment shipment = new Shipment();
+                shipment.Supplier_id = Convert.ToInt32(CmbFrom.SelectedValue);
+                shipment.Warehouse_id = Convert.ToInt32(CmbProduct.SelectedValue);
+                shipment.Ns_id = Convert.ToInt32(CmbNs.SelectedValue);
+                shipment.Count = Convert.ToInt32(TxbCount.Text);
+                shipment.ExpirationDate = DateTime.Now;
+
+                ConnectionPoint.connectPoint.Shipment.AddOrUpdate(shipment);
+                ConnectionPoint.connectPoint.SaveChanges();
+                MessageBox.Show("Все кул!");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Критическая обработка");
+            }
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateClass.frmNav.GoBack();
         }
     }
 }

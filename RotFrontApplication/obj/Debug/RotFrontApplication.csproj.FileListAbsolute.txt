@@ -61,3 +61,5 @@ C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pa
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\OneRequestEditDir.baml
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\OneShipmentEditDirPage.g.cs
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\OneShipmentEditDirPage.baml
+C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\CreateShipmentPage.g.cs
+C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\CreateShipmentPage.baml
