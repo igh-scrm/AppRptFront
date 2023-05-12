@@ -16,11 +16,9 @@
             Height="300">
             <GroupBox Header="Номер продукта:"
                       Margin="5">
-                <TextBox
-                    Name="TxbNumberProduct"
-                    Width="300"
-                    HorizontalAlignment="Left"
-                    Background="White"/>
+                <ComboBox 
+                    Name="CmbNumberOfProduct"
+                    />
             </GroupBox>
             <StackPanel>
                 <GroupBox 
@@ -28,10 +26,9 @@
                 Width="100"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom">
-                    <TextBox 
-                 Name="TxbNs"
-                        Background="#FFFFFF">
-                    </TextBox>
+                    <ComboBox 
+                    Name="CmbNs"
+                    />
                 </GroupBox>
                 <GroupBox 
                 Header="Cколько:"
@@ -45,19 +42,16 @@
             </StackPanel>
             <GroupBox Header="Собрать до:"
                       Margin="5">
-                <TextBox
+                <TextBlock
                     Name="TxbCollectUpTo"
                     Width="300"
                     HorizontalAlignment="Left"
                     Background="White"/>
             </GroupBox>
-            <GroupBox Header="Статус:"
+            <GroupBox Header="Ответственный:"
                       Margin="5">
-                <TextBox
-                    Name="TxbStatus"
-                    Width="300"
-                    HorizontalAlignment="Left"
-                    Background="White"/>
+                <ComboBox
+                    Name="CmbUserCollect"/>
             </GroupBox>
         </StackPanel>
         <Button

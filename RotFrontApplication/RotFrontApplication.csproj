@@ -125,7 +125,6 @@
     <Compile Include="HelperClass\Users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="HelperClass\UsersClass.cs" />
     <Compile Include="HelperClass\ValuePrice.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
