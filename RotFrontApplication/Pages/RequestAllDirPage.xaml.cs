@@ -125,5 +125,50 @@ namespace RotFrontApplication.Pages
         {
             NavigateClass.frmNav.Navigate(new OneRequestEditDir((sender as Button).DataContext as RequestForSending));
         }
+
+        private void BtnDelete0_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (GridListRequestDir0.SelectedItems.Count > 0)
+                {
+                    var idUser = (sender as Button).DataContext as RequestForSending;
+                    var item = ConnectionPoint.connectPoint.RequestForSending.Where(x => x.id == idUser.id).Single();
+                    ConnectionPoint.connectPoint.RequestForSending.Remove(item);
+
+                    ConnectionPoint.connectPoint.SaveChanges();
+                    MessageBox.Show(
+                        "Данные о заказе успешно удалены!",
+                        "Уведомление",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information
+                        );
+                    GridListRequestDir0.ItemsSource = ConnectionPoint.connectPoint.RequestForSending.ToList();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Данных в таблице нет!",
+                        "Уведомление",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information
+                        );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Критическая работа приложения: " + ex.Message.ToLower(),
+                    "Уведомление",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error
+                    );
+            }
+        }
+
+        private void BtnEdit0_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateClass.frmNav.Navigate(new OneRequestEditDir((sender as Button).DataContext as RequestForSending));
+        }
     }
 }

@@ -155,6 +155,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\OneSendEditDirPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\OneSendingDirPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -235,6 +239,9 @@
     </Compile>
     <Compile Include="Pages\OneRequestEditDir.xaml.cs">
       <DependentUpon>OneRequestEditDir.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OneSendEditDirPage.xaml.cs">
+      <DependentUpon>OneSendEditDirPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\OneSendingDirPage.xaml.cs">
       <DependentUpon>OneSendingDirPage.xaml</DependentUpon>

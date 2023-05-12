@@ -110,6 +110,18 @@
                                             BorderThickness="0"
                                             Background="#F5EEE6"
                                             />
+                                                <Button
+                                                    Name="BtnDelete"
+                                                    Click="BtnDelete_Click"
+                                                    Content="Удалить"
+                                                    BorderThickness="0"
+                                                    Background="White"/>
+                                                <Button
+                                                    Name="BtnEdit"
+                                                    Content="Изменить"
+                                                    BorderBrush="Transparent"
+                                                    Background="White"
+                                                    Click="BtnEdit_Click"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
@@ -161,6 +173,17 @@
                                             BorderThickness="0"
                                             Background="#F5EEE6"
                                             />
+                                                <Button
+                                                    Name="BtnDelete0"
+                                                    Click="BtnDelete0_Click"
+                                                    Content="Удалить"
+                                                    BorderThickness="0"
+                                                    Background="White"/>
+                                                <Button
+                                                    Name="BtnEdit0"
+                                                    Content="Изменить"
+                                                    BorderBrush="Transparent"
+                                                    Background="White" Click="BtnEdit0_Click"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
