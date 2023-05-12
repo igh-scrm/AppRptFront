@@ -165,5 +165,10 @@ namespace RotFrontApplication.Pages
             NavigateClass.frmNav.Navigate(new OneSendEditDirPage((sender as Button).DataContext as Sending));
 
         }
+
+        private void BtnCreateRequest_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateClass.frmNav.Navigate(new CreateSendPage());
+        }
     }
 }

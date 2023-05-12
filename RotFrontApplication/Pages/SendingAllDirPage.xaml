@@ -210,9 +210,10 @@
                     Margin="10"/>
                     <Button
                     VerticalAlignment="Bottom"
-                    Content="СОЗДАТЬ ЗАЯВКУ"
+                    Content="СОЗДАТЬ"
                     Name="BtnCreateRequest"
-                    Width="150"
+                    Click="BtnCreateRequest_Click"
+                    Width="100"
                     Background="#0776A0"
                     BorderBrush="Transparent"
                     Foreground="#FFFFFF"
