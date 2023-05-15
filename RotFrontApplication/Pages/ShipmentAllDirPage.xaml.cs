@@ -24,7 +24,7 @@ namespace RotFrontApplication.Pages
         public ShipmentAllDirPage()
         {
             InitializeComponent();
-            GridListShipmentDir.ItemsSource = ConnectionPoint.connectPoint.Shipment.Where(x => x.Date == DateTime.Today).ToList();
+            GridListShipmentDir.ItemsSource = ConnectionPoint.connectPoint.Shipment.Where(x => x.Status== 1).ToList();
             GridListShipmentDir0.ItemsSource = ConnectionPoint.connectPoint.Shipment.Where(x => x.Status == 0).ToList();
 
 
@@ -113,7 +113,42 @@ namespace RotFrontApplication.Pages
 
         private void BtnDelete_Click_1(object sender, RoutedEventArgs e)
         {
-            
+            try
+            {
+                if (GridListShipmentDir0.SelectedItems.Count > 0)
+                {
+                    var idUser = (sender as Button).DataContext as Shipment;
+                    var item = ConnectionPoint.connectPoint.Shipment.Where(x => x.id == idUser.id).Single();
+                    ConnectionPoint.connectPoint.Shipment.Remove(item);
+
+                    ConnectionPoint.connectPoint.SaveChanges();
+                    MessageBox.Show(
+                        "Данные о заказе успешно удалены!",
+                        "Уведомление",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information
+                        );
+                    GridListShipmentDir0.ItemsSource = ConnectionPoint.connectPoint.Shipment.ToList();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Данных в таблице нет!",
+                        "Уведомление",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information
+                        );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Критическая работа приложения: " + ex.Message.ToLower(),
+                    "Уведомление",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error
+                    );
+            }
         }
 
         private void BtnEdit_Click_1(object sender, RoutedEventArgs e)
