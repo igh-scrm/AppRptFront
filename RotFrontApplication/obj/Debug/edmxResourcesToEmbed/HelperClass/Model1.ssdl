@@ -39,9 +39,9 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Warehouse_id" Type="int" Nullable="false" />
+    <Property Name="Warehouse_id" Type="int" />
     <Property Name="Count" Type="float" Nullable="false" />
-    <Property Name="Ns_id" Type="int" Nullable="false" />
+    <Property Name="Ns_id" Type="int" />
     <Property Name="CollectUpTo" Type="date" Nullable="false" />
     <Property Name="User_id" Type="int" />
     <Property Name="Status" Type="tinyint" Nullable="false" />
@@ -167,7 +167,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_RequestForSending_Ns">
-    <End Role="Ns" Type="Self.Ns" Multiplicity="1" />
+    <End Role="Ns" Type="Self.Ns" Multiplicity="0..1" />
     <End Role="RequestForSending" Type="Self.RequestForSending" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Ns">
@@ -191,7 +191,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_RequestForSending_Warehouse">
-    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="0..1" />
     <End Role="RequestForSending" Type="Self.RequestForSending" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Warehouse">

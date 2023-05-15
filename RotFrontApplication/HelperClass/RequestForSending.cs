@@ -21,9 +21,9 @@ namespace RotFrontApplication.HelperClass
         }
     
         public int id { get; set; }
-        public int Warehouse_id { get; set; }
+        public Nullable<int> Warehouse_id { get; set; }
         public double Count { get; set; }
-        public int Ns_id { get; set; }
+        public Nullable<int> Ns_id { get; set; }
         public System.DateTime CollectUpTo { get; set; }
         public Nullable<int> User_id { get; set; }
         public byte Status { get; set; }
