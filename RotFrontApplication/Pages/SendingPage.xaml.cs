@@ -21,17 +21,36 @@ namespace RotFrontApplication.Pages
     /// </summary>
     public partial class SendingPage : Page
     {
+        private Sending _sending { get; set; }
         public SendingPage(Sending sending)
         {
             InitializeComponent();
+            _sending = sending;
             TxbNumber.Text = sending.id.ToString();
             TxbAddress.Text = sending.Destination.Address.ToString();
-            TxbStatus.Text = sending.Status.ToString();
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             NavigateClass.frmNav.GoBack();
+        }
+
+        private void BtnSendEnd_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var data = ConnectionPoint.connectPoint.Sending.FirstOrDefault(x=> x.id == _sending.id);
+                data.Status = 1;
+                ConnectionPoint.connectPoint.SaveChanges();
+
+                MessageBox.Show("Статус закаа изменён!", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                NavigateClass.frmNav.GoBack();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

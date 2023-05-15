@@ -11,6 +11,11 @@
     <Grid>
         <StackPanel Width="600"
                     Height="400">
+            <TextBlock
+                FontSize="20"
+                FontWeight="Bold">
+                НУЖНО СОБРАТЬ
+            </TextBlock>
             <GroupBox>
                 <DataGrid 
                     Name ="GridListRequest" 

@@ -13,6 +13,11 @@
             HorizontalAlignment="Center" 
             VerticalAlignment="Center" 
             Width="400">
+            <TextBlock
+                FontSize="20"
+                FontWeight="Bold">
+                ИНФОРМАЦИЯ О ПУНКТЕ НАЗНАЧЕНИЯ
+            </TextBlock>
             <GroupBox 
                 Header="№">
                 <TextBlock 
@@ -25,13 +30,6 @@
                 <TextBlock 
                  Height="50"   
                  Name="TxbAddress"
-                    Background="#FFFFFF">
-                </TextBlock>
-            </GroupBox>
-            <GroupBox 
-                Header="Статус:">
-                <TextBlock 
-                 Name="TxbStatus"
                     Background="#FFFFFF">
                 </TextBlock>
             </GroupBox>
@@ -54,6 +52,7 @@
             <Button
             Content="ДОСТАВЛЕНО"
             Name="BtnSendEnd"
+                Click="BtnSendEnd_Click"
             Width="100"
             Height="20"
             VerticalAlignment="Top"

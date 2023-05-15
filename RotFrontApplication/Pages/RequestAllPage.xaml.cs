@@ -24,7 +24,7 @@ namespace RotFrontApplication.Pages
         public RequestAllPage()
         {
             InitializeComponent();
-            GridListRequest.ItemsSource = ConnectionPoint.connectPoint.RequestForSending.ToList();
+            GridListRequest.ItemsSource = ConnectionPoint.connectPoint.RequestForSending.Where(x=> x.Status == 0);
 
         }
 

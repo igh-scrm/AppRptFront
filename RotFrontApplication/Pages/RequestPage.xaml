@@ -13,6 +13,11 @@
             HorizontalAlignment="Center" 
             VerticalAlignment="Center" 
             Width="400">
+            <TextBlock
+                FontSize="20"
+                FontWeight="Bold">
+                ИНФОРМАЦИЯ О ЗАЯВКЕ
+            </TextBlock>
             <GroupBox 
                 Header="№">
                 <TextBlock 
@@ -48,13 +53,7 @@
                     </TextBlock>
                 </GroupBox>
             </StackPanel>
-            <GroupBox 
-                Header="Статус:">
-                <TextBlock 
-                 Name="TxbStatus"
-                    Background="#FFFFFF">
-                </TextBlock>
-            </GroupBox>
+
         </StackPanel>
         <Button
             Content="Назад"
@@ -72,8 +71,9 @@
             VerticalAlignment="Bottom"
             Margin="5">
             <Button
-            Content="СОБРАНОы"
+            Content="СОБРАНО"
             Name="BtnAccept"
+            Click="BtnAccept_Click"
             Width="70"
             Height="20"
             VerticalAlignment="Top"
