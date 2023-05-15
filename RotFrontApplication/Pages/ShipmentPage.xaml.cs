@@ -24,12 +24,13 @@ namespace RotFrontApplication.Pages
     public partial class ShipmentPage : Page
     {
         private Shipment _shipment { get; set; }
-        private Warehouse _warehouse { get; set; }
+        private Warehouse _warehouse{ get; set; }
         public ShipmentPage(Shipment shipment)
         {
             InitializeComponent();
             
             _shipment= shipment;
+            CountProduct();
 
             TxbNumber.Text = shipment.id.ToString();
             TxbFrom.Text = shipment.Suppliers.CompanyName;
@@ -56,18 +57,32 @@ namespace RotFrontApplication.Pages
                 var data = ConnectionPoint.connectPoint.Shipment.FirstOrDefault(x => x.id == _shipment.id);
                 data.Status = 1;
                 ConnectionPoint.connectPoint.SaveChanges();
-                MessageBox.Show("Статус закаа изменён!", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                var count = ConnectionPoint.connectPoint.Warehouse.FirstOrDefault(x => x.QuantityInStock == _warehouse.QuantityInStock);
-                count.QuantityInStock += Convert.ToInt32(TxbCount.Text);
+                var dataWarehouse = ConnectionPoint.connectPoint.Warehouse.FirstOrDefault(x => x.Product_id == _shipment.Warehouse_id);
+                dataWarehouse.QuantityInStock = CountProduct();
                 ConnectionPoint.connectPoint.SaveChanges();
 
-            }
-            catch 
-            {
+                MessageBox.Show("Статус закаа изменён!", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                NavigateClass.frmNav.GoBack();
 
-                throw;
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                   "Критическая работа приложения: " + ex.Message.ToLower(),
+                   "Уведомление",
+                   MessageBoxButton.OK,
+                   MessageBoxImage.Error
+                   );
+            }
+        }
+
+        private double CountProduct()
+        {
+            var productCountOnWarehouse = ConnectionPoint.connectPoint.Warehouse.FirstOrDefault(x => x.Product_id == _shipment.Warehouse_id);
+            var productCountOnShipment = ConnectionPoint.connectPoint.Shipment.FirstOrDefault(x => x.id == _shipment.id);
+
+            return productCountOnShipment.Count + productCountOnWarehouse.QuantityInStock;
         }
     }
 }
