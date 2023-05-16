@@ -15,14 +15,15 @@
             Width="400"
             Height="300">
             <GroupBox Header="Номер продукта:"
-                      Margin="5">
+                      Margin="5" Width="400">
                 <ComboBox 
                     Name="CmbNumberOfProduct"
                     />
             </GroupBox>
-            <StackPanel>
+            <StackPanel
+                Margin="5">
                 <GroupBox 
-                Header="ИС:"
+                Header="СИ:"
                 Width="100"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom">
@@ -32,7 +33,7 @@
                 </GroupBox>
                 <GroupBox 
                 Header="Cколько:"
-                Width="300"
+                Width="352"
                 HorizontalAlignment="Left">
                     <TextBox 
                  Name="TxbCount"

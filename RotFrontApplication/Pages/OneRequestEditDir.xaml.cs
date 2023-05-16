@@ -63,7 +63,7 @@ namespace RotFrontApplication.Pages
 
                 ConnectionPoint.connectPoint.RequestForSending.AddOrUpdate(request);
                 ConnectionPoint.connectPoint.SaveChanges();
-                MessageBox.Show("Все кул!");
+                MessageBox.Show("Изменения внесены!");
 
 
             }

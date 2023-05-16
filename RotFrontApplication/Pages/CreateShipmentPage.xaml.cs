@@ -36,6 +36,10 @@ namespace RotFrontApplication.Pages
             CmbNs.DisplayMemberPath = "Name";
             CmbNs.SelectedValuePath = "id";
             CmbNs.ItemsSource = ConnectionPoint.connectPoint.Ns.ToList();
+
+            CmbUser.DisplayMemberPath = "Name";
+            CmbUser.SelectedValuePath = "id";
+            CmbUser.ItemsSource = ConnectionPoint.connectPoint.Users.Where(x => x.Role_id == 1);
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
@@ -51,7 +55,7 @@ namespace RotFrontApplication.Pages
 
                 ConnectionPoint.connectPoint.Shipment.AddOrUpdate(shipment);
                 ConnectionPoint.connectPoint.SaveChanges();
-                MessageBox.Show("Все кул!");
+                MessageBox.Show("Данные добавлены!");
 
 
             }

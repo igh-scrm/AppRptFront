@@ -44,7 +44,7 @@
                     </TextBlock>
                 </GroupBox>
                 <GroupBox 
-                Header="ИС:"
+                Header="СИ:"
                 Width="500"
                 HorizontalAlignment="Left">
                     <TextBlock 

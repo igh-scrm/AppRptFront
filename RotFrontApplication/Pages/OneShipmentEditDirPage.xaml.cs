@@ -37,7 +37,7 @@ namespace RotFrontApplication.Pages
             CmbFrom.SelectedValuePath = "id";
             CmbFrom.ItemsSource = ConnectionPoint.connectPoint.Suppliers.ToList();
 
-            CmbProduct.DisplayMemberPath = "Prodict_id";
+            CmbProduct.DisplayMemberPath = "Product_id";
             CmbProduct.SelectedValuePath = "id";
             CmbProduct.ItemsSource = ConnectionPoint.connectPoint.Warehouse.ToList();
 
@@ -59,7 +59,7 @@ namespace RotFrontApplication.Pages
 
                 ConnectionPoint.connectPoint.Shipment.AddOrUpdate(shipment);
                 ConnectionPoint.connectPoint.SaveChanges();
-                MessageBox.Show("Все кул!");
+                MessageBox.Show("Изменения внесены!");
 
 
             }

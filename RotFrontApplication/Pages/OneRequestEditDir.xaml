@@ -34,7 +34,7 @@
                 </GroupBox>
                 <StackPanel>
                     <GroupBox 
-                Header="ИС:"
+                Header="СИ:"
                 Width="100"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom">
@@ -87,7 +87,7 @@
                 </GroupBox>
                 <StackPanel>
                     <GroupBox 
-                Header="ИС:"
+                Header="СИ:"
                 Width="100"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom">

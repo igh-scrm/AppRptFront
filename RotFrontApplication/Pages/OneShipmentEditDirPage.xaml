@@ -41,7 +41,7 @@
                 </GroupBox>
                 <StackPanel>
                     <GroupBox 
-                Header="Сколько:"
+                Header="СИ:"
                 Width="100"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom">

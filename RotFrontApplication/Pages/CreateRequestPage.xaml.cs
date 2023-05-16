@@ -59,7 +59,7 @@ namespace RotFrontApplication.Pages
 
                 ConnectionPoint.connectPoint.RequestForSending.Add(request);
                 ConnectionPoint.connectPoint.SaveChanges();
-                MessageBox.Show("Все кул!");
+                MessageBox.Show("Данные добавлены!");
             }
             catch(Exception ex)
             {

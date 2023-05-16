@@ -161,5 +161,10 @@ namespace RotFrontApplication.Pages
         {
             NavigateClass.frmNav.Navigate(new CreateShipmentPage());
         }
+
+        private void BtnAddUser_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateClass.frmNav.Navigate(new CreateUserPage());
+        }
     }
 }
