@@ -12,23 +12,26 @@ namespace RotFrontApplication.HelperClass
     using System;
     using System.Collections.Generic;
     
-    public partial class Products
+    public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Products()
+        public Product()
         {
-            this.Warehouse = new HashSet<Warehouse>();
+            this.RequestForSending = new HashSet<RequestForSending>();
+            this.Shipment = new HashSet<Shipment>();
         }
     
         public int id { get; set; }
         public int Type_id { get; set; }
         public string Name { get; set; }
-        public string Price { get; set; }
-        public int ValuePrice_id { get; set; }
+        public double Quantity_in_stock { get; set; }
+        public int Ns_id { get; set; }
     
+        public virtual Ns Ns { get; set; }
         public virtual Type Type { get; set; }
-        public virtual ValuePrice ValuePrice { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Warehouse> Warehouse { get; set; }
+        public virtual ICollection<RequestForSending> RequestForSending { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Shipment> Shipment { get; set; }
     }
 }

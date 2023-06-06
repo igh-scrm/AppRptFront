@@ -43,7 +43,7 @@ namespace RotFrontApplication.Pages
                 data.Status = 1;
                 ConnectionPoint.connectPoint.SaveChanges();
 
-                MessageBox.Show("Статус закаа изменён!", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Статус заказа изменён!", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
                 NavigateClass.frmNav.GoBack();
 
             }

@@ -26,12 +26,12 @@ namespace RotFrontApplication.Pages
             InitializeComponent();
             TxbNumber.Text = shipment.id.ToString();
             TxbFrom.Text = shipment.Suppliers.CompanyName;
-            TxbProduct.Text = shipment.Warehouse.Product_id.ToString();
+            TxbProduct.Text = shipment.Product.Name;
             TxbCount.Text = shipment.Count.ToString();
             TxbNs.Text = shipment.Ns.Name;
             TxbExpDate.Text = shipment.ExpirationDate.ToString();
             TxbStatus.Text = shipment.Status.ToString();
-            TxbAccept.Text = shipment.Users.Name.ToString();
+            TxbAccept.Text = shipment.Users.SNP;
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)

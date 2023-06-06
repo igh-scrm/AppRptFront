@@ -25,11 +25,11 @@ namespace RotFrontApplication.Pages
         {
             InitializeComponent();
             TxbNumber.Text = request.id.ToString();
-            TxbProduct.Text = request.Warehouse.id.ToString();
+            TxbProduct.Text = request.Product.Name;
             TxbNs.Text = request.Ns.Name;
             TxbCount.Text = request.Count.ToString();
             TxbStatus.Text = request.Status.ToString();
-            TxbCollect.Text = request.Users.Name.ToString();
+            TxbCollect.Text = request.Users.SNP;
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)

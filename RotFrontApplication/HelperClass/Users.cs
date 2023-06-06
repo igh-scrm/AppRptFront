@@ -23,11 +23,12 @@ namespace RotFrontApplication.HelperClass
         }
     
         public int id { get; set; }
-        public string Name { get; set; }
-        public string Syrname { get; set; }
+        public string SNP { get; set; }
         public int Role_id { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
+        public System.DateTime DateUpdatePass { get; set; }
+        public System.DateTime DateAdd { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RequestForSending> RequestForSending { get; set; }

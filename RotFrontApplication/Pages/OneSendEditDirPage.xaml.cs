@@ -29,11 +29,11 @@ namespace RotFrontApplication.Pages
             TxbId0.Text = sending.id.ToString();
             TxbId.Text = sending.id.ToString();
             TxbNumber0.Text = sending.Request_id.ToString();
-            TxbUser0.Text = sending.Users.Name;
+            TxbUser0.Text = sending.Users.SNP;
             TxbAddress0.Text = sending.Destination.Address;
             TxbNumber.Text = sending.Request_id.ToString();
 
-            CmbUser.DisplayMemberPath = "Name";
+            CmbUser.DisplayMemberPath = "SNP";
             CmbUser.SelectedValuePath = "id";
             CmbUser.ItemsSource = ConnectionPoint.connectPoint.Users.Where(x => x.Role_id == 3).ToList();
 

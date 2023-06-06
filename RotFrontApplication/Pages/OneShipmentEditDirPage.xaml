@@ -67,6 +67,10 @@
                     Background="#FFFFFF">
                     </TextBlock>
                 </GroupBox>
+                <GroupBox Header="Принял:">
+                    <TextBlock
+                        Name="TxbUser"/>
+                </GroupBox>
                 <Button
                     Width="100"
                     Height="20"
@@ -115,6 +119,10 @@
                  Name="TxbExpDate"
                     Background="#FFFFFF">
                     </TextBox>
+                </GroupBox>
+                <GroupBox Header="Принял:">
+                    <ComboBox
+                        Name="CmbUser"/>
                 </GroupBox>
                 <Button
                 Content="Сохранить"

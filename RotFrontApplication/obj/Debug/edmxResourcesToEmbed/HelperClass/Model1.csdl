@@ -3,21 +3,22 @@
   <EntityContainer Name="DbDauevaEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Destination" EntityType="DbDauevaModel.Destination" />
     <EntitySet Name="Ns" EntityType="DbDauevaModel.Ns" />
-    <EntitySet Name="Products" EntityType="DbDauevaModel.Products" />
+    <EntitySet Name="Product" EntityType="DbDauevaModel.Product" />
     <EntitySet Name="Reject" EntityType="DbDauevaModel.Reject" />
     <EntitySet Name="RequestForSending" EntityType="DbDauevaModel.RequestForSending" />
     <EntitySet Name="Role" EntityType="DbDauevaModel.Role" />
     <EntitySet Name="Sending" EntityType="DbDauevaModel.Sending" />
     <EntitySet Name="Shipment" EntityType="DbDauevaModel.Shipment" />
     <EntitySet Name="Suppliers" EntityType="DbDauevaModel.Suppliers" />
-    <EntitySet Name="sysdiagrams" EntityType="DbDauevaModel.sysdiagrams" />
     <EntitySet Name="Type" EntityType="DbDauevaModel.Type" />
     <EntitySet Name="Users" EntityType="DbDauevaModel.Users" />
-    <EntitySet Name="ValuePrice" EntityType="DbDauevaModel.ValuePrice" />
-    <EntitySet Name="Warehouse" EntityType="DbDauevaModel.Warehouse" />
     <AssociationSet Name="FK_Sending_Destination" Association="DbDauevaModel.FK_Sending_Destination">
       <End Role="Destination" EntitySet="Destination" />
       <End Role="Sending" EntitySet="Sending" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Ns" Association="DbDauevaModel.FK_Product_Ns">
+      <End Role="Ns" EntitySet="Ns" />
+      <End Role="Product" EntitySet="Product" />
     </AssociationSet>
     <AssociationSet Name="FK_RequestForSending_Ns" Association="DbDauevaModel.FK_RequestForSending_Ns">
       <End Role="Ns" EntitySet="Ns" />
@@ -27,21 +28,17 @@
       <End Role="Ns" EntitySet="Ns" />
       <End Role="Shipment" EntitySet="Shipment" />
     </AssociationSet>
-    <AssociationSet Name="FK_Warehouse_Ns" Association="DbDauevaModel.FK_Warehouse_Ns">
-      <End Role="Ns" EntitySet="Ns" />
-      <End Role="Warehouse" EntitySet="Warehouse" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Products_Type" Association="DbDauevaModel.FK_Products_Type">
+    <AssociationSet Name="FK_Product_Type" Association="DbDauevaModel.FK_Product_Type">
       <End Role="Type" EntitySet="Type" />
-      <End Role="Products" EntitySet="Products" />
+      <End Role="Product" EntitySet="Product" />
     </AssociationSet>
-    <AssociationSet Name="FK_Products_ValuePrice" Association="DbDauevaModel.FK_Products_ValuePrice">
-      <End Role="ValuePrice" EntitySet="ValuePrice" />
-      <End Role="Products" EntitySet="Products" />
+    <AssociationSet Name="FK_RequestForSending_Product" Association="DbDauevaModel.FK_RequestForSending_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="RequestForSending" EntitySet="RequestForSending" />
     </AssociationSet>
-    <AssociationSet Name="FK_Warehouse_Products" Association="DbDauevaModel.FK_Warehouse_Products">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="Warehouse" EntitySet="Warehouse" />
+    <AssociationSet Name="FK_Shipment_Product" Association="DbDauevaModel.FK_Shipment_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Shipment" EntitySet="Shipment" />
     </AssociationSet>
     <AssociationSet Name="FK_Reject_Shipment" Association="DbDauevaModel.FK_Reject_Shipment">
       <End Role="Shipment" EntitySet="Shipment" />
@@ -49,10 +46,6 @@
     </AssociationSet>
     <AssociationSet Name="FK_RequestForSending_Users" Association="DbDauevaModel.FK_RequestForSending_Users">
       <End Role="Users" EntitySet="Users" />
-      <End Role="RequestForSending" EntitySet="RequestForSending" />
-    </AssociationSet>
-    <AssociationSet Name="FK_RequestForSending_Warehouse" Association="DbDauevaModel.FK_RequestForSending_Warehouse">
-      <End Role="Warehouse" EntitySet="Warehouse" />
       <End Role="RequestForSending" EntitySet="RequestForSending" />
     </AssociationSet>
     <AssociationSet Name="FK_Sending_RequestForSending" Association="DbDauevaModel.FK_Sending_RequestForSending">
@@ -75,10 +68,6 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Shipment" EntitySet="Shipment" />
     </AssociationSet>
-    <AssociationSet Name="FK_Shipment_Warehouse" Association="DbDauevaModel.FK_Shipment_Warehouse">
-      <End Role="Warehouse" EntitySet="Warehouse" />
-      <End Role="Shipment" EntitySet="Shipment" />
-    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Destination">
     <Key>
@@ -96,22 +85,23 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="DbDauevaModel.FK_Product_Ns" FromRole="Ns" ToRole="Product" />
     <NavigationProperty Name="RequestForSending" Relationship="DbDauevaModel.FK_RequestForSending_Ns" FromRole="Ns" ToRole="RequestForSending" />
     <NavigationProperty Name="Shipment" Relationship="DbDauevaModel.FK_Shipment_Ns" FromRole="Ns" ToRole="Shipment" />
-    <NavigationProperty Name="Warehouse" Relationship="DbDauevaModel.FK_Warehouse_Ns" FromRole="Ns" ToRole="Warehouse" />
   </EntityType>
-  <EntityType Name="Products">
+  <EntityType Name="Product">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Type_id" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="Price" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ValuePrice_id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Type" Relationship="DbDauevaModel.FK_Products_Type" FromRole="Products" ToRole="Type" />
-    <NavigationProperty Name="ValuePrice" Relationship="DbDauevaModel.FK_Products_ValuePrice" FromRole="Products" ToRole="ValuePrice" />
-    <NavigationProperty Name="Warehouse" Relationship="DbDauevaModel.FK_Warehouse_Products" FromRole="Products" ToRole="Warehouse" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity_in_stock" Type="Double" Nullable="false" />
+    <Property Name="Ns_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Ns" Relationship="DbDauevaModel.FK_Product_Ns" FromRole="Product" ToRole="Ns" />
+    <NavigationProperty Name="Type" Relationship="DbDauevaModel.FK_Product_Type" FromRole="Product" ToRole="Type" />
+    <NavigationProperty Name="RequestForSending" Relationship="DbDauevaModel.FK_RequestForSending_Product" FromRole="Product" ToRole="RequestForSending" />
+    <NavigationProperty Name="Shipment" Relationship="DbDauevaModel.FK_Shipment_Product" FromRole="Product" ToRole="Shipment" />
   </EntityType>
   <EntityType Name="Reject">
     <Key>
@@ -127,15 +117,15 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Warehouse_id" Type="Int32" />
+    <Property Name="Product_id" Type="Int32" Nullable="false" />
     <Property Name="Count" Type="Double" Nullable="false" />
-    <Property Name="Ns_id" Type="Int32" />
+    <Property Name="Ns_id" Type="Int32" Nullable="false" />
     <Property Name="CollectUpTo" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="User_id" Type="Int32" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
     <Property Name="Status" Type="Byte" Nullable="false" />
     <NavigationProperty Name="Ns" Relationship="DbDauevaModel.FK_RequestForSending_Ns" FromRole="RequestForSending" ToRole="Ns" />
+    <NavigationProperty Name="Product" Relationship="DbDauevaModel.FK_RequestForSending_Product" FromRole="RequestForSending" ToRole="Product" />
     <NavigationProperty Name="Users" Relationship="DbDauevaModel.FK_RequestForSending_Users" FromRole="RequestForSending" ToRole="Users" />
-    <NavigationProperty Name="Warehouse" Relationship="DbDauevaModel.FK_RequestForSending_Warehouse" FromRole="RequestForSending" ToRole="Warehouse" />
     <NavigationProperty Name="Sending" Relationship="DbDauevaModel.FK_Sending_RequestForSending" FromRole="RequestForSending" ToRole="Sending" />
   </EntityType>
   <EntityType Name="Role">
@@ -152,7 +142,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Request_id" Type="Int32" Nullable="false" />
-    <Property Name="User_id" Type="Int32" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
     <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Destination_id" Type="Int32" Nullable="false" />
     <Property Name="Status" Type="Byte" Nullable="false" />
@@ -167,17 +157,17 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Supplier_id" Type="Int32" Nullable="false" />
     <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="Warehouse_id" Type="Int32" Nullable="false" />
+    <Property Name="Product_id" Type="Int32" Nullable="false" />
     <Property Name="Count" Type="Double" Nullable="false" />
     <Property Name="Ns_id" Type="Int32" Nullable="false" />
     <Property Name="ExpirationDate" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="ToAccept" Type="Int32" />
+    <Property Name="ToAccept" Type="Int32" Nullable="false" />
     <Property Name="Status" Type="Byte" Nullable="false" />
     <NavigationProperty Name="Ns" Relationship="DbDauevaModel.FK_Shipment_Ns" FromRole="Shipment" ToRole="Ns" />
+    <NavigationProperty Name="Product" Relationship="DbDauevaModel.FK_Shipment_Product" FromRole="Shipment" ToRole="Product" />
     <NavigationProperty Name="Reject" Relationship="DbDauevaModel.FK_Reject_Shipment" FromRole="Shipment" ToRole="Reject" />
     <NavigationProperty Name="Suppliers" Relationship="DbDauevaModel.FK_Shipment_Suppliers" FromRole="Shipment" ToRole="Suppliers" />
     <NavigationProperty Name="Users" Relationship="DbDauevaModel.FK_Shipment_Users" FromRole="Shipment" ToRole="Users" />
-    <NavigationProperty Name="Warehouse" Relationship="DbDauevaModel.FK_Shipment_Warehouse" FromRole="Shipment" ToRole="Warehouse" />
   </EntityType>
   <EntityType Name="Suppliers">
     <Key>
@@ -188,59 +178,29 @@
     <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Shipment" Relationship="DbDauevaModel.FK_Shipment_Suppliers" FromRole="Suppliers" ToRole="Shipment" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <EntityType Name="Type">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Products" Relationship="DbDauevaModel.FK_Products_Type" FromRole="Type" ToRole="Products" />
+    <NavigationProperty Name="Product" Relationship="DbDauevaModel.FK_Product_Type" FromRole="Type" ToRole="Product" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Syrname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SNP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Role_id" Type="Int32" Nullable="false" />
     <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateUpdatePass" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateAdd" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="RequestForSending" Relationship="DbDauevaModel.FK_RequestForSending_Users" FromRole="Users" ToRole="RequestForSending" />
     <NavigationProperty Name="Role" Relationship="DbDauevaModel.FK_Users_Role" FromRole="Users" ToRole="Role" />
     <NavigationProperty Name="Sending" Relationship="DbDauevaModel.FK_Sending_Users" FromRole="Users" ToRole="Sending" />
     <NavigationProperty Name="Shipment" Relationship="DbDauevaModel.FK_Shipment_Users" FromRole="Users" ToRole="Shipment" />
-  </EntityType>
-  <EntityType Name="ValuePrice">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Products" Relationship="DbDauevaModel.FK_Products_ValuePrice" FromRole="ValuePrice" ToRole="Products" />
-  </EntityType>
-  <EntityType Name="Warehouse">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Product_id" Type="Int32" Nullable="false" />
-    <Property Name="QuantityInStock" Type="Double" Nullable="false" />
-    <Property Name="Ns_id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Ns" Relationship="DbDauevaModel.FK_Warehouse_Ns" FromRole="Warehouse" ToRole="Ns" />
-    <NavigationProperty Name="Products" Relationship="DbDauevaModel.FK_Warehouse_Products" FromRole="Warehouse" ToRole="Products" />
-    <NavigationProperty Name="RequestForSending" Relationship="DbDauevaModel.FK_RequestForSending_Warehouse" FromRole="Warehouse" ToRole="RequestForSending" />
-    <NavigationProperty Name="Shipment" Relationship="DbDauevaModel.FK_Shipment_Warehouse" FromRole="Warehouse" ToRole="Shipment" />
   </EntityType>
   <Association Name="FK_Sending_Destination">
     <End Type="DbDauevaModel.Destination" Role="Destination" Multiplicity="1" />
@@ -254,8 +214,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Product_Ns">
+    <End Type="DbDauevaModel.Ns" Role="Ns" Multiplicity="1" />
+    <End Type="DbDauevaModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ns">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Ns_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_RequestForSending_Ns">
-    <End Type="DbDauevaModel.Ns" Role="Ns" Multiplicity="0..1" />
+    <End Type="DbDauevaModel.Ns" Role="Ns" Multiplicity="1" />
     <End Type="DbDauevaModel.RequestForSending" Role="RequestForSending" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Ns">
@@ -278,56 +250,46 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Warehouse_Ns">
-    <End Type="DbDauevaModel.Ns" Role="Ns" Multiplicity="1" />
-    <End Type="DbDauevaModel.Warehouse" Role="Warehouse" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Ns">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Warehouse">
-        <PropertyRef Name="Ns_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Products_Type">
+  <Association Name="FK_Product_Type">
     <End Type="DbDauevaModel.Type" Role="Type" Multiplicity="1" />
-    <End Type="DbDauevaModel.Products" Role="Products" Multiplicity="*" />
+    <End Type="DbDauevaModel.Product" Role="Product" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Type">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Products">
+      <Dependent Role="Product">
         <PropertyRef Name="Type_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Products_ValuePrice">
-    <End Type="DbDauevaModel.ValuePrice" Role="ValuePrice" Multiplicity="1" />
-    <End Type="DbDauevaModel.Products" Role="Products" Multiplicity="*" />
+  <Association Name="FK_RequestForSending_Product">
+    <End Type="DbDauevaModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="DbDauevaModel.RequestForSending" Role="RequestForSending" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="ValuePrice">
+      <Principal Role="Product">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Products">
-        <PropertyRef Name="ValuePrice_id" />
+      <Dependent Role="RequestForSending">
+        <PropertyRef Name="Product_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Warehouse_Products">
-    <End Type="DbDauevaModel.Products" Role="Products" Multiplicity="1" />
-    <End Type="DbDauevaModel.Warehouse" Role="Warehouse" Multiplicity="*" />
+  <Association Name="FK_Shipment_Product">
+    <End Type="DbDauevaModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="DbDauevaModel.Shipment" Role="Shipment" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Products">
+      <Principal Role="Product">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Warehouse">
+      <Dependent Role="Shipment">
         <PropertyRef Name="Product_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Reject_Shipment">
-    <End Type="DbDauevaModel.Shipment" Role="Shipment" Multiplicity="1" />
+    <End Type="DbDauevaModel.Shipment" Role="Shipment" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Type="DbDauevaModel.Reject" Role="Reject" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Shipment">
@@ -339,7 +301,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_RequestForSending_Users">
-    <End Type="DbDauevaModel.Users" Role="Users" Multiplicity="0..1" />
+    <End Type="DbDauevaModel.Users" Role="Users" Multiplicity="1" />
     <End Type="DbDauevaModel.RequestForSending" Role="RequestForSending" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
@@ -350,20 +312,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_RequestForSending_Warehouse">
-    <End Type="DbDauevaModel.Warehouse" Role="Warehouse" Multiplicity="0..1" />
-    <End Type="DbDauevaModel.RequestForSending" Role="RequestForSending" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Warehouse">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="RequestForSending">
-        <PropertyRef Name="Warehouse_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Sending_RequestForSending">
-    <End Type="DbDauevaModel.RequestForSending" Role="RequestForSending" Multiplicity="1" />
+    <End Type="DbDauevaModel.RequestForSending" Role="RequestForSending" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Type="DbDauevaModel.Sending" Role="Sending" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="RequestForSending">
@@ -387,7 +339,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Sending_Users">
-    <End Type="DbDauevaModel.Users" Role="Users" Multiplicity="0..1" />
+    <End Type="DbDauevaModel.Users" Role="Users" Multiplicity="1" />
     <End Type="DbDauevaModel.Sending" Role="Sending" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
@@ -411,7 +363,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Shipment_Users">
-    <End Type="DbDauevaModel.Users" Role="Users" Multiplicity="0..1" />
+    <End Type="DbDauevaModel.Users" Role="Users" Multiplicity="1" />
     <End Type="DbDauevaModel.Shipment" Role="Shipment" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
@@ -419,18 +371,6 @@
       </Principal>
       <Dependent Role="Shipment">
         <PropertyRef Name="ToAccept" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Shipment_Warehouse">
-    <End Type="DbDauevaModel.Warehouse" Role="Warehouse" Multiplicity="1" />
-    <End Type="DbDauevaModel.Shipment" Role="Shipment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Warehouse">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Shipment">
-        <PropertyRef Name="Warehouse_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -22,7 +22,7 @@ namespace RotFrontApplication.Pages
     public partial class RequestPage : Page
     {
         private RequestForSending _request { get; set; }
-        private Warehouse _warehouse { get; set; }
+        private Product _product { get; set; }
 
         public RequestPage(RequestForSending request)
         {
@@ -31,7 +31,7 @@ namespace RotFrontApplication.Pages
             _request = request;
 
             TxbNumber.Text = request.id.ToString();
-            TxbProduct.Text = request.Warehouse.id.ToString();
+            TxbProduct.Text = request.Product.Name.ToString();
             TxbNs.Text = request.Ns.Name;
             TxbCount.Text = request.Count.ToString();
         }
@@ -48,8 +48,8 @@ namespace RotFrontApplication.Pages
                 var data = ConnectionPoint.connectPoint.RequestForSending.FirstOrDefault(x => x.id == _request.id);
                 data.Status = 1;
 
-                var dataWarehouse = ConnectionPoint.connectPoint.Warehouse.FirstOrDefault(x => x.Product_id == _request.Warehouse_id);
-                dataWarehouse.QuantityInStock = CountProduct();
+                var dataWarehouse = ConnectionPoint.connectPoint.Product.FirstOrDefault(x => x.id == _request.id);
+                dataWarehouse.Quantity_in_stock = CountProduct();
                 ConnectionPoint.connectPoint.SaveChanges();
 
                 MessageBox.Show("Статус закаа изменён!", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -63,10 +63,10 @@ namespace RotFrontApplication.Pages
         }
         private double CountProduct()
         {
-            var productCountOnWarehouse = ConnectionPoint.connectPoint.Warehouse.FirstOrDefault(x => x.Product_id == _request.Warehouse_id);
+            var productCountOnWarehouse = ConnectionPoint.connectPoint.Product.FirstOrDefault(x => x.id == _request.id);
             var productCountOnShipment = ConnectionPoint.connectPoint.Shipment.FirstOrDefault(x => x.id == _request.id);
 
-            return productCountOnWarehouse.QuantityInStock - productCountOnShipment.Count;
+            return productCountOnWarehouse.Quantity_in_stock - productCountOnShipment.Count;
 
         }
     }

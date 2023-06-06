@@ -27,20 +27,20 @@ namespace RotFrontApplication.Pages
             InitializeComponent();
             TxbNumber0.Text = request.id.ToString();
             TxbNumber.Text = request.id.ToString();
-            TxbProduct0.Text = request.Warehouse.id.ToString();
+            TxbProduct0.Text = request.Product.Name;
             TxbNs0.Text = request.Ns.Name;
             TxbCount0.Text = request.Count.ToString();
-            TxbCollect0.Text = request.Users.Name.ToString();
+            TxbCollect0.Text = request.Users.SNP;
 
-            CmbProduct.DisplayMemberPath = "Product_id";
+            CmbProduct.DisplayMemberPath = "Name";
             CmbProduct.SelectedValuePath = "id";
-            CmbProduct.ItemsSource = ConnectionPoint.connectPoint.Warehouse.ToList();
+            CmbProduct.ItemsSource = ConnectionPoint.connectPoint.Product.ToList();
 
             CmbNs.DisplayMemberPath = "Name";
             CmbNs.SelectedValuePath = "id";
             CmbNs.ItemsSource = ConnectionPoint.connectPoint.Ns.ToList();
 
-            CmbCollect.DisplayMemberPath = "Name";
+            CmbCollect.DisplayMemberPath = "SNP";
             CmbCollect.SelectedValuePath = "id";
             CmbCollect.ItemsSource = ConnectionPoint.connectPoint.Users.Where(x => x.Role_id ==2).ToList();
         }
@@ -56,7 +56,7 @@ namespace RotFrontApplication.Pages
             {
                 RequestForSending request = new RequestForSending();
                 request.id = Convert.ToInt32(TxbNumber.Text);
-                request.Warehouse_id = Convert.ToInt32(CmbProduct.SelectedValue);
+                request.Product_id = Convert.ToInt32(CmbProduct.SelectedValue);
                 request.Ns_id = Convert.ToInt32(CmbNs.SelectedValue);
                 request.Count = Convert.ToInt32(TxbCount.Text);
                 request.User_id = Convert.ToInt32(CmbCollect.SelectedValue);    

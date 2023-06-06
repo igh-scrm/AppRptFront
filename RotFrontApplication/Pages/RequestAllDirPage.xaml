@@ -16,52 +16,64 @@
         <StackPanel Grid.Row="0"
                     Orientation="Horizontal">
             <Button
-                Width="150"
+                Width="100"
                 Height="30"
-                Margin="8"
+                Margin="5"
                 Background="#0776A0"
                 BorderBrush="Transparent"
                 Foreground="#FFFFFF"
-                FontSize="20"
+                FontSize="15"
                 FontWeight="Bold"
                 Content="ПОСТАВКИ"
                 Name="BtnShip"
                 Click="BtnShip_Click"/>
             <Button
-                Width="250"
+                Width="190"
                 Height="30"
-                Margin="8"
+                Margin="5"
                 Background="#0776A0"
                 Foreground="#FFFFFF"
-                FontSize="20"
+                FontSize="15"
                 FontWeight="Bold"
                 BorderBrush="Transparent"
                 Content="ЗАЯВКИ НА ОТПРАВКУ"
                 Name="BtnRequest"/>
             <Button
-                Width="150"
+                Width="100"
                 Height="30"
-                Margin="8"
+                Margin="5"
                 Background="#0776A0"
                 Foreground="#FFFFFF"
-                FontSize="20"
+                FontSize="15"
                 FontWeight="Bold"
                 BorderBrush="Transparent"
                 Content="ДОСТАВКИ"
                 Name="BtnSend"
                 Click="BtnSend_Click"/>
             <Button
-                Width="180"
+                Width="150"
                 Height="30"
-                Margin="8"
+                Margin="5"
                 Background="#0776A0"
                 Foreground="#FFFFFF"
-                FontSize="20"
+                FontSize="15"
                 FontWeight="Bold"
                 BorderBrush="Transparent"
                 Content="ОТЧЕТ ПО БРАКУ"
                 Name="BtnReject"
                 Click="BtnReject_Click"/>
+            <Button
+                Width="170"
+                Height="30"
+                Margin="5"
+                Background="#0776A0"
+                Foreground="#FFFFFF"
+                FontSize="15"
+                FontWeight="Bold"
+                BorderBrush="Transparent"
+                Content="ДОБАВИТЬ ПРОДУКТ"
+                Name="BtnAddProduct"
+                Click="BtnAddProduct_Click"/>
         </StackPanel>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>

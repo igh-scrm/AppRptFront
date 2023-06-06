@@ -27,7 +27,7 @@ namespace RotFrontApplication.Pages
             InitializeComponent();
             TxbNumber0.Text = shipment.id.ToString();
             TxbFrom0.Text = shipment.Suppliers.CompanyName;
-            TxbProduct0.Text = shipment.Warehouse.Product_id.ToString();
+            TxbProduct0.Text = shipment.Product.Name;
             TxbCount0.Text = shipment.Count.ToString();
             TxbNs0.Text = shipment.Ns.Name;
             TxbExpDate0.Text = shipment.ExpirationDate.ToString();
@@ -37,13 +37,17 @@ namespace RotFrontApplication.Pages
             CmbFrom.SelectedValuePath = "id";
             CmbFrom.ItemsSource = ConnectionPoint.connectPoint.Suppliers.ToList();
 
-            CmbProduct.DisplayMemberPath = "Product_id";
+            CmbProduct.DisplayMemberPath = "Name";
             CmbProduct.SelectedValuePath = "id";
-            CmbProduct.ItemsSource = ConnectionPoint.connectPoint.Warehouse.ToList();
+            CmbProduct.ItemsSource = ConnectionPoint.connectPoint.Product.ToList();
 
             CmbNs.DisplayMemberPath = "Name";
             CmbNs.SelectedValuePath = "id";
             CmbNs.ItemsSource = ConnectionPoint.connectPoint.Ns.ToList();
+
+            CmbUser.DisplayMemberPath = "SNP";
+            CmbUser.SelectedValuePath = "id";
+            CmbUser.ItemsSource = ConnectionPoint.connectPoint.Users.ToList();
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
@@ -52,7 +56,7 @@ namespace RotFrontApplication.Pages
             {
                 Shipment shipment = new Shipment();
                 shipment.Supplier_id = Convert.ToInt32(CmbFrom.SelectedValue);
-                shipment.Warehouse_id = Convert.ToInt32(CmbProduct.SelectedValue);
+                shipment.Product_id = Convert.ToInt32(CmbProduct.SelectedValue);
                 shipment.Ns_id = Convert.ToInt32(CmbNs.SelectedValue);
                 shipment.Count = Convert.ToInt32(TxbCount.Text);
                 shipment.ExpirationDate = Convert.ToDateTime(TxbExpDate.Text);

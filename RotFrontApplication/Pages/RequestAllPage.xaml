@@ -24,7 +24,7 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn
                             Header="Дедлaйн"
-                            Binding="{Binding CollectUpTo}" 
+                            Binding="{Binding Product.Name}" 
                             Width="*"/>
                         <DataGridTemplateColumn Width="*">
                             <DataGridTemplateColumn.CellTemplate>

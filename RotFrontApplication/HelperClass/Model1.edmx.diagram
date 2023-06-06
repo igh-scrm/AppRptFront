@@ -5,36 +5,31 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="6f30d938d40746f9a73d171aa23cab70" Name="Diagram1">
-        <EntityTypeShape EntityType="DbDauevaModel.Destination" Width="1.5" PointX="8.25" PointY="1.875" />
-        <EntityTypeShape EntityType="DbDauevaModel.Ns" Width="1.5" PointX="0.75" PointY="5.875" />
-        <EntityTypeShape EntityType="DbDauevaModel.Products" Width="1.5" PointX="0.75" PointY="1.5" />
-        <EntityTypeShape EntityType="DbDauevaModel.Reject" Width="1.5" PointX="10.5" PointY="5.875" />
-        <EntityTypeShape EntityType="DbDauevaModel.RequestForSending" Width="1.5" PointX="5.25" PointY="5.25" />
-        <EntityTypeShape EntityType="DbDauevaModel.Role" Width="1.5" PointX="3.75" PointY="10" />
-        <EntityTypeShape EntityType="DbDauevaModel.Sending" Width="1.5" PointX="10.5" PointY="2.5" />
-        <EntityTypeShape EntityType="DbDauevaModel.Shipment" Width="1.5" PointX="8.25" PointY="5" />
-        <EntityTypeShape EntityType="DbDauevaModel.Suppliers" Width="1.5" PointX="6" PointY="1.75" />
-        <EntityTypeShape EntityType="DbDauevaModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="DbDauevaModel.Type" Width="1.5" PointX="1.5" PointY="8.875" />
-        <EntityTypeShape EntityType="DbDauevaModel.Users" Width="1.5" PointX="6" PointY="9.25" />
-        <EntityTypeShape EntityType="DbDauevaModel.ValuePrice" Width="1.5" PointX="1.5" PointY="11.25" />
-        <EntityTypeShape EntityType="DbDauevaModel.Warehouse" Width="1.5" PointX="3" PointY="5.5" />
+        <EntityTypeShape EntityType="DbDauevaModel.Destination" Width="1.5" PointX="8.25" PointY="0.75" />
+        <EntityTypeShape EntityType="DbDauevaModel.Ns" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DbDauevaModel.Product" Width="1.5" PointX="3" PointY="4.375" />
+        <EntityTypeShape EntityType="DbDauevaModel.Reject" Width="1.5" PointX="10.5" PointY="4.875" />
+        <EntityTypeShape EntityType="DbDauevaModel.RequestForSending" Width="1.5" PointX="5.25" PointY="4.125" />
+        <EntityTypeShape EntityType="DbDauevaModel.Role" Width="1.5" PointX="0.75" PointY="9" />
+        <EntityTypeShape EntityType="DbDauevaModel.Sending" Width="1.5" PointX="10.5" PointY="1.375" />
+        <EntityTypeShape EntityType="DbDauevaModel.Shipment" Width="1.5" PointX="8.25" PointY="3.875" />
+        <EntityTypeShape EntityType="DbDauevaModel.Suppliers" Width="1.5" PointX="6" PointY="0.875" />
+        <EntityTypeShape EntityType="DbDauevaModel.Type" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="DbDauevaModel.Users" Width="1.5" PointX="3" PointY="8.125" />
         <AssociationConnector Association="DbDauevaModel.FK_Sending_Destination" />
+        <AssociationConnector Association="DbDauevaModel.FK_Product_Ns" />
         <AssociationConnector Association="DbDauevaModel.FK_RequestForSending_Ns" />
         <AssociationConnector Association="DbDauevaModel.FK_Shipment_Ns" />
-        <AssociationConnector Association="DbDauevaModel.FK_Warehouse_Ns" />
-        <AssociationConnector Association="DbDauevaModel.FK_Products_Type" />
-        <AssociationConnector Association="DbDauevaModel.FK_Products_ValuePrice" />
-        <AssociationConnector Association="DbDauevaModel.FK_Warehouse_Products" />
+        <AssociationConnector Association="DbDauevaModel.FK_Product_Type" />
+        <AssociationConnector Association="DbDauevaModel.FK_RequestForSending_Product" />
+        <AssociationConnector Association="DbDauevaModel.FK_Shipment_Product" />
         <AssociationConnector Association="DbDauevaModel.FK_Reject_Shipment" />
         <AssociationConnector Association="DbDauevaModel.FK_RequestForSending_Users" />
-        <AssociationConnector Association="DbDauevaModel.FK_RequestForSending_Warehouse" />
         <AssociationConnector Association="DbDauevaModel.FK_Sending_RequestForSending" />
         <AssociationConnector Association="DbDauevaModel.FK_Users_Role" />
         <AssociationConnector Association="DbDauevaModel.FK_Sending_Users" />
         <AssociationConnector Association="DbDauevaModel.FK_Shipment_Suppliers" />
         <AssociationConnector Association="DbDauevaModel.FK_Shipment_Users" />
-        <AssociationConnector Association="DbDauevaModel.FK_Shipment_Warehouse" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

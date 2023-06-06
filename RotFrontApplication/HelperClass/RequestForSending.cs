@@ -21,16 +21,16 @@ namespace RotFrontApplication.HelperClass
         }
     
         public int id { get; set; }
-        public Nullable<int> Warehouse_id { get; set; }
+        public int Product_id { get; set; }
         public double Count { get; set; }
-        public Nullable<int> Ns_id { get; set; }
+        public int Ns_id { get; set; }
         public System.DateTime CollectUpTo { get; set; }
-        public Nullable<int> User_id { get; set; }
+        public int User_id { get; set; }
         public byte Status { get; set; }
     
         public virtual Ns Ns { get; set; }
+        public virtual Product Product { get; set; }
         public virtual Users Users { get; set; }
-        public virtual Warehouse Warehouse { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sending> Sending { get; set; }
     }

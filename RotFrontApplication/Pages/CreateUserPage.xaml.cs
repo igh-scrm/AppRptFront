@@ -36,8 +36,7 @@ namespace RotFrontApplication.Pages
             try
             {
                 Users users = new Users();
-                users.Name = TxbName.Text;
-                users.Syrname = TxbSurname.Text;
+                users.SNP = TxbName.Text;
                 users.Role_id = Convert.ToInt32(CmdRole.SelectedValue);
                 users.Login = TxbLogin.Text;
                 users.Password = TxbPass.Text;

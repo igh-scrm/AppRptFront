@@ -30,7 +30,7 @@ namespace RotFrontApplication.Pages
             CmdRequest_id.SelectedValuePath = "id";
             CmdRequest_id.ItemsSource = ConnectionPoint.connectPoint.RequestForSending.ToList();
 
-            CmdUser_id.DisplayMemberPath = "Name";
+            CmdUser_id.DisplayMemberPath = "SNP";
             CmdUser_id.SelectedValuePath = "id";
             CmdUser_id.ItemsSource = ConnectionPoint.connectPoint.Users.Where(x => x.Role_id == 4).ToList();
 

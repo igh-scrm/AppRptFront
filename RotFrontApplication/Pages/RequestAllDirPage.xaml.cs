@@ -170,5 +170,10 @@ namespace RotFrontApplication.Pages
         {
             NavigateClass.frmNav.Navigate(new OneRequestEditDir((sender as Button).DataContext as RequestForSending));
         }
+
+        private void BtnAddProduct_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateClass.frmNav.Navigate(new CreateProductPage());
+        }
     }
 }

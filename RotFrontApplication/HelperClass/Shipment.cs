@@ -23,18 +23,18 @@ namespace RotFrontApplication.HelperClass
         public int id { get; set; }
         public int Supplier_id { get; set; }
         public System.DateTime Date { get; set; }
-        public int Warehouse_id { get; set; }
+        public int Product_id { get; set; }
         public double Count { get; set; }
         public int Ns_id { get; set; }
         public System.DateTime ExpirationDate { get; set; }
-        public Nullable<int> ToAccept { get; set; }
+        public int ToAccept { get; set; }
         public byte Status { get; set; }
     
         public virtual Ns Ns { get; set; }
+        public virtual Product Product { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reject> Reject { get; set; }
         public virtual Suppliers Suppliers { get; set; }
         public virtual Users Users { get; set; }
-        public virtual Warehouse Warehouse { get; set; }
     }
 }

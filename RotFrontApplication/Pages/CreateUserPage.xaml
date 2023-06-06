@@ -14,13 +14,9 @@
             Height="300"
             VerticalAlignment="Center"
             HorizontalAlignment="Center">
-            <GroupBox Header="Введите Имя:">
+            <GroupBox Header="Введите ФИО полностью:">
                 <TextBox
                     Name="TxbName"/>
-            </GroupBox>
-            <GroupBox Header="Фамилия:">
-                <TextBox
-                    Name="TxbSurname"/>
             </GroupBox>
             <GroupBox Header="Должность:">
                 <ComboBox

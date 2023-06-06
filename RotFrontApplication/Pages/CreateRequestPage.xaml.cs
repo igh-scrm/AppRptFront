@@ -24,15 +24,15 @@ namespace RotFrontApplication.Pages
         public CreateRequestPage()
         {
             InitializeComponent();
-            CmbNumberOfProduct.DisplayMemberPath = "Product_id";
+            CmbNumberOfProduct.DisplayMemberPath = "Name";
             CmbNumberOfProduct.SelectedValuePath = "id";
-            CmbNumberOfProduct.ItemsSource = ConnectionPoint.connectPoint.Warehouse.ToList();
+            CmbNumberOfProduct.ItemsSource = ConnectionPoint.connectPoint.Product.ToList();
 
             CmbNs.DisplayMemberPath = "Name";
             CmbNs.SelectedValuePath = "id";
             CmbNs.ItemsSource = ConnectionPoint.connectPoint.Ns.ToList();
 
-            CmbUserCollect.DisplayMemberPath = "Name";
+            CmbUserCollect.DisplayMemberPath = "SNP";
             CmbUserCollect.SelectedValuePath = "id";
             CmbUserCollect.ItemsSource = ConnectionPoint.connectPoint.Users.Where(x => x.Role_id == 2).ToList();
 
@@ -49,7 +49,7 @@ namespace RotFrontApplication.Pages
             try
             {
                 RequestForSending request = new RequestForSending();
-                request.Warehouse_id = Convert.ToInt32(CmbNumberOfProduct.SelectedValue);
+                request.Product_id = Convert.ToInt32(CmbNumberOfProduct.SelectedValue);
                 request.Ns_id = Convert.ToInt32(CmbNs.SelectedValue);
                 request.Count = Convert.ToInt32(TxbCount.Text);
                 request.User_id = Convert.ToInt32(CmbUserCollect.SelectedValue);

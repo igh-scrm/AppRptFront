@@ -27,17 +27,14 @@ namespace RotFrontApplication.HelperClass
     
         public virtual DbSet<Destination> Destination { get; set; }
         public virtual DbSet<Ns> Ns { get; set; }
-        public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Reject> Reject { get; set; }
         public virtual DbSet<RequestForSending> RequestForSending { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Sending> Sending { get; set; }
         public virtual DbSet<Shipment> Shipment { get; set; }
         public virtual DbSet<Suppliers> Suppliers { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Type> Type { get; set; }
         public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<ValuePrice> ValuePrice { get; set; }
-        public virtual DbSet<Warehouse> Warehouse { get; set; }
     }
 }

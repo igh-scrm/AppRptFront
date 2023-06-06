@@ -9,66 +9,67 @@
       Title="ShipmentPage">
 
     <Grid>
-        <StackPanel 
+        <Grid>
+            <StackPanel 
             HorizontalAlignment="Center" 
             VerticalAlignment="Center" 
             Width="400">
-            <TextBlock
+                <TextBlock
                 FontSize="20"
                 FontWeight="Bold">
                 ИНФОРМАЦИЯ О ПОСТАВКЕ
-            </TextBlock>
-            <GroupBox 
+                </TextBlock>
+                <GroupBox 
                 Header="№">
-                <TextBlock 
+                    <TextBlock 
                  Name="TxbNumber"
                     Background="#FFFFFF">
-                </TextBlock>
-            </GroupBox>
-            <GroupBox 
+                    </TextBlock>
+                </GroupBox>
+                <GroupBox 
                 Header="Откуда:">
-                <TextBlock 
+                    <TextBlock 
                  Name="TxbFrom"
                     Background="#FFFFFF">
-                </TextBlock>
-            </GroupBox>
-            <GroupBox 
+                    </TextBlock>
+                </GroupBox>
+                <GroupBox 
                 Header="Что пришло:">
-                <TextBlock 
+                    <TextBlock 
                  Name="TxbProduct"
                     Background="#FFFFFF">
-                </TextBlock>
-            </GroupBox>
-            <StackPanel>
-                <GroupBox 
+                    </TextBlock>
+                </GroupBox>
+                <StackPanel>
+                    <GroupBox 
                 Header="СИ:"
                 Width="100"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom">
-                    <TextBlock 
+                        <TextBlock 
                  Name="TxbNs"
                         Background="#FFFFFF">
-                    </TextBlock>
-                </GroupBox>
-                <GroupBox 
+                        </TextBlock>
+                    </GroupBox>
+                    <GroupBox 
                 Header="Сколько:"
                 Width="500"
                 HorizontalAlignment="Left">
-                    <TextBlock 
+                        <TextBlock 
                  Name="TxbCount"
                         Background="#FFFFFF">
+                        </TextBlock>
+                    </GroupBox>
+                </StackPanel>
+                <GroupBox 
+                Header="Дата поступления:">
+                    <TextBlock 
+                 Name="TxbExpDate"
+                    Background="#FFFFFF">
                     </TextBlock>
                 </GroupBox>
             </StackPanel>
-            <GroupBox 
-                Header="Дата поступления:">
-                <TextBlock 
-                 Name="TxbExpDate"
-                    Background="#FFFFFF">
-                </TextBlock>
-            </GroupBox>
-        </StackPanel>
-        <Button
+            <Button
             Content="Назад"
             Name="BtnBack"
             Click="BtnBack_Click"
@@ -80,10 +81,10 @@
             Background="#0776A0"
             BorderBrush="#0776A0"
             Foreground="#FFFFFF"/>
-        <StackPanel 
+            <StackPanel 
             VerticalAlignment="Bottom"
             Margin="5">
-            <Button
+                <Button
             Content="ТОВАР БРАКОВАННЫЙ"
             Click="BtnReject_Click"
             Name="BtnReject"
@@ -95,7 +96,7 @@
             Background="#0776A0"
             BorderBrush="#0776A0"
             Foreground="#FFFFFF"/>
-            <Button
+                <Button
             Content="ПРИНЯТО"
             Name="BtnAccept"
             Click="BtnAccept_Click"
@@ -107,6 +108,7 @@
             Background="#0776A0"
             BorderBrush="#0776A0"
             Foreground="#FFFFFF"/>
-        </StackPanel>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

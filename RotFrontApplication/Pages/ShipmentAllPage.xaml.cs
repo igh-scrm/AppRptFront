@@ -21,11 +21,15 @@ namespace RotFrontApplication.Pages
     /// </summary>
     public partial class ShipmentAllPage : Page
     {
-        public ShipmentAllPage(Users authData)
+        public ShipmentAllPage()
         {
             InitializeComponent();
 
-            GridListShipment.ItemsSource = ConnectionPoint.connectPoint.Shipment.Where(x => x.Status == 0 && x.ToAccept == authData.id).ToList();
+            //Users authData
+
+            GridListShipment.ItemsSource = ConnectionPoint.connectPoint.Shipment.Where(x => x.Status == 0).ToList();
+
+            //&& x.ToAccept == authData.id
 
         }
 
@@ -33,5 +37,6 @@ namespace RotFrontApplication.Pages
         {
             NavigateClass.frmNav.Navigate(new ShipmentPage((sender as Button).DataContext as Shipment));
         }
+
     }
 }

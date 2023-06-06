@@ -16,7 +16,7 @@ namespace RotFrontApplication.HelperClass
     {
         public int id { get; set; }
         public int Request_id { get; set; }
-        public Nullable<int> User_id { get; set; }
+        public int User_id { get; set; }
         public System.DateTime Date { get; set; }
         public int Destination_id { get; set; }
         public byte Status { get; set; }
