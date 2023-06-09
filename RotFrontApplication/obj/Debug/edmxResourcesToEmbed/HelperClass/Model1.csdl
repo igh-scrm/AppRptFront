@@ -390,6 +390,7 @@
     <Property Name="PasswordEntryAttempts" Type="Int32" Nullable="false" />
     <Property Name="Success" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Users" Relationship="DbDauevaModel.FK_LogHistory_Users" FromRole="LogHistory" ToRole="Users" />
+    <Property Name="CountBlockBtn" Type="Int32" Nullable="false" />
   </EntityType>
   <Association Name="FK_LogHistory_Users">
     <End Type="DbDauevaModel.Users" Role="Users" Multiplicity="1" />

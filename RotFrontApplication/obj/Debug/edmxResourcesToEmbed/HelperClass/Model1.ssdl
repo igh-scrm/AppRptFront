@@ -18,6 +18,7 @@
     <Property Name="LogTime" Type="date" Nullable="false" />
     <Property Name="PasswordEntryAttempts" Type="int" Nullable="false" />
     <Property Name="Success" Type="int" Nullable="false" />
+    <Property Name="CountBlockBtn" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Ns">
     <Key>

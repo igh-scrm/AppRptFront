@@ -63,15 +63,15 @@
                 Name="BtnReject"
                 Click="BtnReject_Click"/>
             <Button
-                Width="220"
+                Width="250"
                 Height="30"
-                Margin="5"
+                Margin="3"
                 Background="#0776A0"
                 BorderBrush="Transparent"
                 Foreground="White"
                 FontSize="15"
                 FontWeight="Bold"
-                Content="ДОБАВИТЬ ПОЛЬЗОВАТЕЛЯ"
+                Content="МОНИТОРИНГ ПОЛЬЗОВАТЕЛЕЙ"
                 Name="BtnAddUser"
                 Click="BtnAddUser_Click"/>
         </StackPanel>

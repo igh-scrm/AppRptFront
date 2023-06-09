@@ -23,6 +23,7 @@
           <Property Name="LogTime" Type="date" Nullable="false" />
           <Property Name="PasswordEntryAttempts" Type="int" Nullable="false" />
           <Property Name="Success" Type="int" Nullable="false" />
+          <Property Name="CountBlockBtn" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Ns">
           <Key>
@@ -772,6 +773,7 @@
           <Property Name="PasswordEntryAttempts" Type="Int32" Nullable="false" />
           <Property Name="Success" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Users" Relationship="DbDauevaModel.FK_LogHistory_Users" FromRole="LogHistory" ToRole="Users" />
+          <Property Name="CountBlockBtn" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK_LogHistory_Users">
           <End Type="DbDauevaModel.Users" Role="Users" Multiplicity="1" />
@@ -910,6 +912,7 @@
           <EntitySetMapping Name="LogHistory">
             <EntityTypeMapping TypeName="DbDauevaModel.LogHistory">
               <MappingFragment StoreEntitySet="LogHistory">
+                <ScalarProperty Name="CountBlockBtn" ColumnName="CountBlockBtn" />
                 <ScalarProperty Name="Success" ColumnName="Success" />
                 <ScalarProperty Name="PasswordEntryAttempts" ColumnName="PasswordEntryAttempts" />
                 <ScalarProperty Name="LogTime" ColumnName="LogTime" />

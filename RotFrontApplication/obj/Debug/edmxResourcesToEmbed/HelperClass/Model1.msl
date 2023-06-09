@@ -120,6 +120,7 @@
     <EntitySetMapping Name="LogHistory">
       <EntityTypeMapping TypeName="DbDauevaModel.LogHistory">
         <MappingFragment StoreEntitySet="LogHistory">
+          <ScalarProperty Name="CountBlockBtn" ColumnName="CountBlockBtn" />
           <ScalarProperty Name="Success" ColumnName="Success" />
           <ScalarProperty Name="PasswordEntryAttempts" ColumnName="PasswordEntryAttempts" />
           <ScalarProperty Name="LogTime" ColumnName="LogTime" />

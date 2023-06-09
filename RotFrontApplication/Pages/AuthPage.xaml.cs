@@ -28,6 +28,7 @@ namespace RotFrontApplication.Pages
 
         }
         private int failedAttempts = 0;
+        private int blockBtn = 0;
         private System.Windows.Threading.DispatcherTimer timer;
 
         private void BtnAuth_Click(object sender, RoutedEventArgs e)
@@ -63,6 +64,9 @@ namespace RotFrontApplication.Pages
                         case 4:
                             NavigateClass.frmNav.Navigate(new ShipmentAllDirPage());
                             break;
+                        case 5:
+                            NavigateClass.frmNav.Navigate(new AdminPage());
+                            break;
                     }
 
                     LogHistory log = new LogHistory
@@ -70,7 +74,8 @@ namespace RotFrontApplication.Pages
                         User_id = data.id,
                         LogTime = DateTime.Now,
                         PasswordEntryAttempts = failedAttempts,
-                        Success = 1
+                        Success = 1,
+                        CountBlockBtn = blockBtn
                     };
 
                     ConnectionPoint.connectPoint.LogHistory.Add(log);
@@ -82,6 +87,7 @@ namespace RotFrontApplication.Pages
 
                 if (failedAttempts >= 3)
                 {
+                    blockBtn++;
                     MessageBox.Show("Вы превысили число попыток входа в систему. Попробуйте еще раз через минуту.", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error);
 
                     // Блокируем страницу авторизации
@@ -93,6 +99,8 @@ namespace RotFrontApplication.Pages
                     
                     timer.Tick += Timer_Tick;
                     timer.Start();
+
+
                 }
 
                
