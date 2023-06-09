@@ -19,8 +19,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserName_id" Type="int" Nullable="false" />
-          <Property Name="LodinTime" Type="datetime" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="LogTime" Type="date" Nullable="false" />
+          <Property Name="PasswordEntryAttempts" Type="int" Nullable="false" />
           <Property Name="Success" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Ns">
@@ -127,7 +128,7 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="LogHistory">
-              <PropertyRef Name="UserName_id" />
+              <PropertyRef Name="User_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -766,8 +767,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserName_id" Type="Int32" Nullable="false" />
-          <Property Name="LodinTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="LogTime" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PasswordEntryAttempts" Type="Int32" Nullable="false" />
           <Property Name="Success" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Users" Relationship="DbDauevaModel.FK_LogHistory_Users" FromRole="LogHistory" ToRole="Users" />
         </EntityType>
@@ -779,7 +781,7 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="LogHistory">
-              <PropertyRef Name="UserName_id" />
+              <PropertyRef Name="User_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -909,8 +911,9 @@
             <EntityTypeMapping TypeName="DbDauevaModel.LogHistory">
               <MappingFragment StoreEntitySet="LogHistory">
                 <ScalarProperty Name="Success" ColumnName="Success" />
-                <ScalarProperty Name="LodinTime" ColumnName="LodinTime" />
-                <ScalarProperty Name="UserName_id" ColumnName="UserName_id" />
+                <ScalarProperty Name="PasswordEntryAttempts" ColumnName="PasswordEntryAttempts" />
+                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

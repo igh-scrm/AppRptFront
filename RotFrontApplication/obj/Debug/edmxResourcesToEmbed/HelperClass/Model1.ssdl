@@ -14,8 +14,9 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UserName_id" Type="int" Nullable="false" />
-    <Property Name="LodinTime" Type="datetime" Nullable="false" />
+    <Property Name="User_id" Type="int" Nullable="false" />
+    <Property Name="LogTime" Type="date" Nullable="false" />
+    <Property Name="PasswordEntryAttempts" Type="int" Nullable="false" />
     <Property Name="Success" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Ns">
@@ -122,7 +123,7 @@
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="LogHistory">
-        <PropertyRef Name="UserName_id" />
+        <PropertyRef Name="User_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

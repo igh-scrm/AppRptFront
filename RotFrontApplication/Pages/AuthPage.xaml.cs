@@ -41,10 +41,14 @@ namespace RotFrontApplication.Pages
                 if (data == null)
                 {
                     failedAttempts++;
+                   
                     MessageBox.Show("Такого пользователя нет", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                   
                 }
                 else
                 {
+
                     switch (data.Role_id)
                     {
                         case 1:
@@ -60,6 +64,20 @@ namespace RotFrontApplication.Pages
                             NavigateClass.frmNav.Navigate(new ShipmentAllDirPage());
                             break;
                     }
+
+                    LogHistory log = new LogHistory
+                    {
+                        User_id = data.id,
+                        LogTime = DateTime.Now,
+                        PasswordEntryAttempts = failedAttempts,
+                        Success = 1
+                    };
+
+                    ConnectionPoint.connectPoint.LogHistory.Add(log);
+                    ConnectionPoint.connectPoint.SaveChanges();
+
+
+
                 }
 
                 if (failedAttempts >= 3)
@@ -72,9 +90,12 @@ namespace RotFrontApplication.Pages
                     // Запускаем таймер на 60 секунд для разблокировки страницы
                     timer = new System.Windows.Threading.DispatcherTimer();
                     timer.Interval = TimeSpan.FromSeconds(60);
+                    
                     timer.Tick += Timer_Tick;
                     timer.Start();
                 }
+
+               
             }
             catch (Exception ex)
             {

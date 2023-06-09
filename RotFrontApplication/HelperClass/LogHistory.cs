@@ -15,8 +15,9 @@ namespace RotFrontApplication.HelperClass
     public partial class LogHistory
     {
         public int id { get; set; }
-        public int UserName_id { get; set; }
-        public System.DateTime LodinTime { get; set; }
+        public int User_id { get; set; }
+        public System.DateTime LogTime { get; set; }
+        public int PasswordEntryAttempts { get; set; }
         public int Success { get; set; }
     
         public virtual Users Users { get; set; }

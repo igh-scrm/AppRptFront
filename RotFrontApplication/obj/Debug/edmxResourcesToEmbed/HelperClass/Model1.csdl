@@ -385,8 +385,9 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserName_id" Type="Int32" Nullable="false" />
-    <Property Name="LodinTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="LogTime" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PasswordEntryAttempts" Type="Int32" Nullable="false" />
     <Property Name="Success" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Users" Relationship="DbDauevaModel.FK_LogHistory_Users" FromRole="LogHistory" ToRole="Users" />
   </EntityType>
@@ -398,7 +399,7 @@
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="LogHistory">
-        <PropertyRef Name="UserName_id" />
+        <PropertyRef Name="User_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
