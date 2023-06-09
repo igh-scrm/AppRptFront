@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -35,8 +36,10 @@ namespace RotFrontApplication.Pages
         {
             try
             {
+                string hashPassword = HashPassword(PsbPass.Password);
+
                 var data = ConnectionPoint.connectPoint.Users.FirstOrDefault(
-                    x => x.Login == TxbLogin.Text && x.Password == PsbPass.Password
+                    x => x.Login == TxbLogin.Text && x.Password == hashPassword
                 );
 
                 if (data == null)
@@ -108,6 +111,20 @@ namespace RotFrontApplication.Pages
             catch (Exception ex)
             {
                 // Обработка ошибок
+            }
+        }
+
+        private string HashPassword(string password)
+        {
+            using (MD5 md5Hash = MD5.Create())
+            {
+                byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder sBuilder = new StringBuilder();
+                for (int i = 0; i < data.Length; i++)
+                {
+                    sBuilder.Append(data[i].ToString("x2"));
+                }
+                return sBuilder.ToString();
             }
         }
 

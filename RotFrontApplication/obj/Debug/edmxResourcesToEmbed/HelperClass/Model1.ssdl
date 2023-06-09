@@ -112,7 +112,7 @@
     <Property Name="SNP" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Role_id" Type="int" Nullable="false" />
     <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="500" />
     <Property Name="DateUpdatePass" Type="date" Nullable="false" />
     <Property Name="DateAdd" Type="date" Nullable="false" />
   </EntityType>

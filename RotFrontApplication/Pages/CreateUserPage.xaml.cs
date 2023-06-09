@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -39,8 +40,8 @@ namespace RotFrontApplication.Pages
                 users.SNP = TxbName.Text;
                 users.Role_id = Convert.ToInt32(CmdRole.SelectedValue);
                 users.Login = TxbLogin.Text;
-                users.Password = TxbPass.Text;
-
+                string hashedPassword = HashPassword(TxbPass.Text);
+                users.Password = hashedPassword;
                 ConnectionPoint.connectPoint.Users.AddOrUpdate(users);
                 ConnectionPoint.connectPoint.SaveChanges();
                 MessageBox.Show("Пользователь добавлен!");
@@ -50,6 +51,20 @@ namespace RotFrontApplication.Pages
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString(), "Критическая обработка");
+            }
+        }
+
+        private string HashPassword(string password)
+        {
+            using (MD5 md5Hash = MD5.Create())
+            {
+                byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder sBuilder = new StringBuilder();
+                for (int i = 0; i < data.Length; i++)
+                {
+                    sBuilder.Append(data[i].ToString("x2"));
+                }
+                return sBuilder.ToString();
             }
         }
 
