@@ -117,5 +117,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="LogHistory">
+      <EntityTypeMapping TypeName="DbDauevaModel.LogHistory">
+        <MappingFragment StoreEntitySet="LogHistory">
+          <ScalarProperty Name="Success" ColumnName="Success" />
+          <ScalarProperty Name="LodinTime" ColumnName="LodinTime" />
+          <ScalarProperty Name="UserName_id" ColumnName="UserName_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

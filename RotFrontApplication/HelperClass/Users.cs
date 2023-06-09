@@ -20,6 +20,7 @@ namespace RotFrontApplication.HelperClass
             this.RequestForSending = new HashSet<RequestForSending>();
             this.Sending = new HashSet<Sending>();
             this.Shipment = new HashSet<Shipment>();
+            this.LogHistory = new HashSet<LogHistory>();
         }
     
         public int id { get; set; }
@@ -37,5 +38,7 @@ namespace RotFrontApplication.HelperClass
         public virtual ICollection<Sending> Sending { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Shipment> Shipment { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LogHistory> LogHistory { get; set; }
     }
 }

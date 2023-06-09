@@ -68,6 +68,11 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Shipment" EntitySet="Shipment" />
     </AssociationSet>
+    <EntitySet Name="LogHistory" EntityType="DbDauevaModel.LogHistory" />
+    <AssociationSet Name="FK_LogHistory_Users" Association="DbDauevaModel.FK_LogHistory_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="LogHistory" EntitySet="LogHistory" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Destination">
     <Key>
@@ -194,13 +199,14 @@
     <Property Name="SNP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Role_id" Type="Int32" Nullable="false" />
     <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DateUpdatePass" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="DateAdd" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="RequestForSending" Relationship="DbDauevaModel.FK_RequestForSending_Users" FromRole="Users" ToRole="RequestForSending" />
     <NavigationProperty Name="Role" Relationship="DbDauevaModel.FK_Users_Role" FromRole="Users" ToRole="Role" />
     <NavigationProperty Name="Sending" Relationship="DbDauevaModel.FK_Sending_Users" FromRole="Users" ToRole="Sending" />
     <NavigationProperty Name="Shipment" Relationship="DbDauevaModel.FK_Shipment_Users" FromRole="Users" ToRole="Shipment" />
+    <NavigationProperty Name="LogHistory" Relationship="DbDauevaModel.FK_LogHistory_Users" FromRole="Users" ToRole="LogHistory" />
   </EntityType>
   <Association Name="FK_Sending_Destination">
     <End Type="DbDauevaModel.Destination" Role="Destination" Multiplicity="1" />
@@ -371,6 +377,28 @@
       </Principal>
       <Dependent Role="Shipment">
         <PropertyRef Name="ToAccept" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="LogHistory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName_id" Type="Int32" Nullable="false" />
+    <Property Name="LodinTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Success" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="DbDauevaModel.FK_LogHistory_Users" FromRole="LogHistory" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK_LogHistory_Users">
+    <End Type="DbDauevaModel.Users" Role="Users" Multiplicity="1" />
+    <End Type="DbDauevaModel.LogHistory" Role="LogHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="LogHistory">
+        <PropertyRef Name="UserName_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

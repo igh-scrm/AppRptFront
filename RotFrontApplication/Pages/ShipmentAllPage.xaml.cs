@@ -21,7 +21,7 @@ namespace RotFrontApplication.Pages
     /// </summary>
     public partial class ShipmentAllPage : Page
     {
-        public ShipmentAllPage()
+        public ShipmentAllPage(Users authData)
         {
             InitializeComponent();
 

@@ -14,6 +14,15 @@
           <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Phone_number" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="LogHistory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName_id" Type="int" Nullable="false" />
+          <Property Name="LodinTime" Type="datetime" Nullable="false" />
+          <Property Name="Success" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Ns">
           <Key>
             <PropertyRef Name="id" />
@@ -106,10 +115,22 @@
           <Property Name="SNP" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Role_id" Type="int" Nullable="false" />
           <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="DateUpdatePass" Type="date" Nullable="false" />
           <Property Name="DateAdd" Type="date" Nullable="false" />
         </EntityType>
+        <Association Name="FK_LogHistory_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="LogHistory" Type="Self.LogHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="LogHistory">
+              <PropertyRef Name="UserName_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Product_Ns">
           <End Role="Ns" Type="Self.Ns" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
@@ -284,6 +305,7 @@
         </Association>
         <EntityContainer Name="Хранилище DbDauevaModelContainer">
           <EntitySet Name="Destination" EntityType="Self.Destination" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogHistory" EntityType="Self.LogHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ns" EntityType="Self.Ns" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reject" EntityType="Self.Reject" Schema="dbo" store:Type="Tables" />
@@ -294,6 +316,10 @@
           <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_LogHistory_Users" Association="Self.FK_LogHistory_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="LogHistory" EntitySet="LogHistory" />
+          </AssociationSet>
           <AssociationSet Name="FK_Product_Ns" Association="Self.FK_Product_Ns">
             <End Role="Ns" EntitySet="Ns" />
             <End Role="Product" EntitySet="Product" />
@@ -423,6 +449,11 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Shipment" EntitySet="Shipment" />
           </AssociationSet>
+          <EntitySet Name="LogHistory" EntityType="DbDauevaModel.LogHistory" />
+          <AssociationSet Name="FK_LogHistory_Users" Association="DbDauevaModel.FK_LogHistory_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="LogHistory" EntitySet="LogHistory" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Destination">
           <Key>
@@ -549,13 +580,14 @@
           <Property Name="SNP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Role_id" Type="Int32" Nullable="false" />
           <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DateUpdatePass" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="DateAdd" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="RequestForSending" Relationship="DbDauevaModel.FK_RequestForSending_Users" FromRole="Users" ToRole="RequestForSending" />
           <NavigationProperty Name="Role" Relationship="DbDauevaModel.FK_Users_Role" FromRole="Users" ToRole="Role" />
           <NavigationProperty Name="Sending" Relationship="DbDauevaModel.FK_Sending_Users" FromRole="Users" ToRole="Sending" />
           <NavigationProperty Name="Shipment" Relationship="DbDauevaModel.FK_Shipment_Users" FromRole="Users" ToRole="Shipment" />
+          <NavigationProperty Name="LogHistory" Relationship="DbDauevaModel.FK_LogHistory_Users" FromRole="Users" ToRole="LogHistory" />
         </EntityType>
         <Association Name="FK_Sending_Destination">
           <End Type="DbDauevaModel.Destination" Role="Destination" Multiplicity="1" />
@@ -729,6 +761,28 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="LogHistory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName_id" Type="Int32" Nullable="false" />
+          <Property Name="LodinTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Success" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="DbDauevaModel.FK_LogHistory_Users" FromRole="LogHistory" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_LogHistory_Users">
+          <End Type="DbDauevaModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="DbDauevaModel.LogHistory" Role="LogHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="LogHistory">
+              <PropertyRef Name="UserName_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -847,6 +901,16 @@
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Role_id" ColumnName="Role_id" />
                 <ScalarProperty Name="SNP" ColumnName="SNP" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogHistory">
+            <EntityTypeMapping TypeName="DbDauevaModel.LogHistory">
+              <MappingFragment StoreEntitySet="LogHistory">
+                <ScalarProperty Name="Success" ColumnName="Success" />
+                <ScalarProperty Name="LodinTime" ColumnName="LodinTime" />
+                <ScalarProperty Name="UserName_id" ColumnName="UserName_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
