@@ -42,6 +42,8 @@ namespace RotFrontApplication.Pages
                 users.Login = TxbLogin.Text;
                 string hashedPassword = HashPassword(TxbPass.Text);
                 users.Password = hashedPassword;
+                users.DateAdd = DateTime.Now;
+                users.DateUpdatePass = null;
                 ConnectionPoint.connectPoint.Users.AddOrUpdate(users);
                 ConnectionPoint.connectPoint.SaveChanges();
                 MessageBox.Show("Пользователь добавлен!");

@@ -123,6 +123,9 @@
     <Compile Include="HelperClass\Suppliers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="HelperClass\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="HelperClass\Type.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -139,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AuthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ChangePass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -249,6 +256,9 @@
     </Compile>
     <Compile Include="Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChangePass.xaml.cs">
+      <DependentUpon>ChangePass.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CreateProductPage.xaml.cs">
       <DependentUpon>CreateProductPage.xaml</DependentUpon>

@@ -25,12 +25,7 @@ namespace RotFrontApplication.Pages
         {
             InitializeComponent();
 
-            //Users authData
-
-            GridListShipment.ItemsSource = ConnectionPoint.connectPoint.Shipment.Where(x => x.Status == 0).ToList();
-
-            //&& x.ToAccept == authData.id
-
+            GridListShipment.ItemsSource = ConnectionPoint.connectPoint.Shipment.Where(x => x.Status == 0 && x.ToAccept == authData.id).ToList();
         }
 
         private void BtnViewAccept_Click(object sender, RoutedEventArgs e)

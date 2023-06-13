@@ -73,6 +73,7 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="LogHistory" EntitySet="LogHistory" />
     </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="DbDauevaModel.sysdiagrams" />
   </EntityContainer>
   <EntityType Name="Destination">
     <Key>
@@ -200,7 +201,7 @@
     <Property Name="Role_id" Type="Int32" Nullable="false" />
     <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="DateUpdatePass" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateUpdatePass" Type="DateTime" Precision="0" />
     <Property Name="DateAdd" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="RequestForSending" Relationship="DbDauevaModel.FK_RequestForSending_Users" FromRole="Users" ToRole="RequestForSending" />
     <NavigationProperty Name="Role" Relationship="DbDauevaModel.FK_Users_Role" FromRole="Users" ToRole="Role" />
@@ -404,4 +405,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
 </Schema>

@@ -97,6 +97,16 @@
     <Property Name="CompanyName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="Type">
     <Key>
       <PropertyRef Name="id" />
@@ -113,7 +123,7 @@
     <Property Name="Role_id" Type="int" Nullable="false" />
     <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="500" />
-    <Property Name="DateUpdatePass" Type="date" Nullable="false" />
+    <Property Name="DateUpdatePass" Type="date" />
     <Property Name="DateAdd" Type="date" Nullable="false" />
   </EntityType>
   <Association Name="FK_LogHistory_Users">
@@ -311,6 +321,7 @@
     <EntitySet Name="Sending" EntityType="Self.Sending" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Shipment" EntityType="Self.Shipment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_LogHistory_Users" Association="Self.FK_LogHistory_Users">

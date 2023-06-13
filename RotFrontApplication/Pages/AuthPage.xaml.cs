@@ -32,6 +32,8 @@ namespace RotFrontApplication.Pages
         private int blockBtn = 0;
         private System.Windows.Threading.DispatcherTimer timer;
 
+
+
         private void BtnAuth_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -52,37 +54,48 @@ namespace RotFrontApplication.Pages
                 }
                 else
                 {
-
-                    switch (data.Role_id)
+                    if (data.DateUpdatePass != null)
                     {
-                        case 1:
-                            NavigateClass.frmNav.Navigate(new ShipmentAllPage(data));
-                            break;
-                        case 2:
-                            NavigateClass.frmNav.Navigate(new RequestAllPage());
-                            break;
-                        case 3:
-                            NavigateClass.frmNav.Navigate(new SendingAllPage());
-                            break;
-                        case 4:
-                            NavigateClass.frmNav.Navigate(new ShipmentAllDirPage());
-                            break;
-                        case 5:
-                            NavigateClass.frmNav.Navigate(new AdminPage());
-                            break;
+                        switch (data.Role_id)
+                        {
+                            case 1:
+                                NavigateClass.frmNav.Navigate(new ShipmentAllPage(data));
+                                break;
+                            case 2:
+                                NavigateClass.frmNav.Navigate(new RequestAllPage());
+                                break;
+                            case 3:
+                                NavigateClass.frmNav.Navigate(new SendingAllPage());
+                                break;
+                            case 4:
+                                NavigateClass.frmNav.Navigate(new ShipmentAllDirPage());
+                                break;
+                            case 5:
+                                NavigateClass.frmNav.Navigate(new AdminPage());
+                                break;
+                        }
+
+                        LogHistory log = new LogHistory
+                        {
+                            User_id = data.id,
+                            LogTime = DateTime.Now,
+                            PasswordEntryAttempts = failedAttempts,
+                            Success = 1,
+                            CountBlockBtn = blockBtn
+                        };
+
+                        ConnectionPoint.connectPoint.LogHistory.Add(log);
+                        ConnectionPoint.connectPoint.SaveChanges();
                     }
-
-                    LogHistory log = new LogHistory
+                    else
                     {
-                        User_id = data.id,
-                        LogTime = DateTime.Now,
-                        PasswordEntryAttempts = failedAttempts,
-                        Success = 1,
-                        CountBlockBtn = blockBtn
-                    };
+                        MessageBoxResult result = MessageBox.Show("При первой авторизации необходимо изменить пароль. Сделать это сейчас?", "ERP: Складской учет", MessageBoxButton.YesNo);
+                        if (result == MessageBoxResult.Yes)
+                        {
+                            NavigateClass.frmNav.Navigate(new ChangePass(data));
+                        }
 
-                    ConnectionPoint.connectPoint.LogHistory.Add(log);
-                    ConnectionPoint.connectPoint.SaveChanges();
+                    }
 
 
 

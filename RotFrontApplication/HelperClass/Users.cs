@@ -28,7 +28,7 @@ namespace RotFrontApplication.HelperClass
         public int Role_id { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public System.DateTime DateUpdatePass { get; set; }
+        public Nullable<System.DateTime> DateUpdatePass { get; set; }
         public System.DateTime DateAdd { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

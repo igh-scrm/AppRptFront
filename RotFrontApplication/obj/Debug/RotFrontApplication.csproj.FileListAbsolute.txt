@@ -77,3 +77,6 @@ C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\bin\Debug\Ne
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\bin\Debug\Newtonsoft.Json.xml
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\AdminPage.g.cs
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\AdminPage.baml
+C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\ChangePass.g.cs
+C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\App.baml
+C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\obj\Debug\Pages\ChangePass.baml

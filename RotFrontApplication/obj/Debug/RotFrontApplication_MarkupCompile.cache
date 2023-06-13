@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\aye22\source\repos\RotFrontApplication\RotFrontApplication\App.xaml
-28-1009626416
+291545631569
 22118640721
-501431456536
+52415920696
 201244486177
-MainWindow.xaml;Pages\AdminPage.xaml;Pages\AuthPage.xaml;Pages\CreateProductPage.xaml;Pages\CreateRequestPage.xaml;Pages\CreateSendPage.xaml;Pages\CreateShipmentPage.xaml;Pages\CreateUserPage.xaml;Pages\OneRejectEditDirPage.xaml;Pages\OneRequestDirPage.xaml;Pages\OneRequestEditDir.xaml;Pages\OneSendEditDirPage.xaml;Pages\OneSendingDirPage.xaml;Pages\OneShipmentDirPage.xaml;Pages\OneShipmentEditDirPage.xaml;Pages\RejectOneReport.xaml;Pages\RejectPage.xaml;Pages\RejectReportPage.xaml;Pages\RequestAllDirPage.xaml;Pages\RequestAllPage.xaml;Pages\RequestPage.xaml;Pages\SendingAllDirPage.xaml;Pages\SendingAllPage.xaml;Pages\SendingPage.xaml;Pages\ShipmentAllDirPage.xaml;Pages\ShipmentAllPage.xaml;Pages\ShipmentDirPage.xaml;Pages\ShipmentPage.xaml;
+MainWindow.xaml;Pages\AdminPage.xaml;Pages\AuthPage.xaml;Pages\ChangePass.xaml;Pages\CreateProductPage.xaml;Pages\CreateRequestPage.xaml;Pages\CreateSendPage.xaml;Pages\CreateShipmentPage.xaml;Pages\CreateUserPage.xaml;Pages\OneRejectEditDirPage.xaml;Pages\OneRequestDirPage.xaml;Pages\OneRequestEditDir.xaml;Pages\OneSendEditDirPage.xaml;Pages\OneSendingDirPage.xaml;Pages\OneShipmentDirPage.xaml;Pages\OneShipmentEditDirPage.xaml;Pages\RejectOneReport.xaml;Pages\RejectPage.xaml;Pages\RejectReportPage.xaml;Pages\RequestAllDirPage.xaml;Pages\RequestAllPage.xaml;Pages\RequestPage.xaml;Pages\SendingAllDirPage.xaml;Pages\SendingAllPage.xaml;Pages\SendingPage.xaml;Pages\ShipmentAllDirPage.xaml;Pages\ShipmentAllPage.xaml;Pages\ShipmentDirPage.xaml;Pages\ShipmentPage.xaml;
 
 False
 

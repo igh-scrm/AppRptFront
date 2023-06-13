@@ -4,6 +4,28 @@
              xmlns:local="clr-namespace:RotFrontApplication"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="GridRedColor" TargetType="Grid">
+            <Setter Property="Background" Value="Red"/>
+        </Style>
+
+        <Style x:Key="GridOrangeColor" TargetType="Grid">
+            <Setter Property="Background" Value="Orange"/>
+        </Style>
+
+        <Style x:Key="PasswordBoxYellowBorder" TargetType="PasswordBox">
+            <Setter Property="BorderBrush" Value="Yellow"/>
+        </Style>
+
+        <Style x:Key="PasswordBoxGreenYellowBorder" TargetType="PasswordBox">
+            <Setter Property="BorderBrush" Value="GreenYellow"/>
+        </Style>
+
+        <Style x:Key="PasswordBoxLimeGreenBorder" TargetType="PasswordBox">
+            <Setter Property="BorderBrush" Value="LimeGreen"/>
+        </Style>
+
+        <Style x:Key="PasswordBoxDarkGreenBorder" TargetType="PasswordBox">
+            <Setter Property="BorderBrush" Value="DarkGreen"/>
+        </Style>
     </Application.Resources>
 </Application>
