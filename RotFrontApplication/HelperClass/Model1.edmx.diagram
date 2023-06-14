@@ -32,7 +32,6 @@
         <AssociationConnector Association="DbDauevaModel.FK_Shipment_Users" />
         <EntityTypeShape EntityType="DbDauevaModel.LogHistory" Width="1.5" PointX="5.625" PointY="11" />
         <AssociationConnector Association="DbDauevaModel.FK_LogHistory_Users" />
-        <EntityTypeShape EntityType="DbDauevaModel.sysdiagrams" Width="1.5" PointX="8.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

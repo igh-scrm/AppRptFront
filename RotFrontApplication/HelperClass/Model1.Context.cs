@@ -37,6 +37,5 @@ namespace RotFrontApplication.HelperClass
         public virtual DbSet<Type> Type { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<LogHistory> LogHistory { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

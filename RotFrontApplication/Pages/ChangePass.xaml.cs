@@ -1,7 +1,9 @@
 ﻿using RotFrontApplication.HelperClass;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -10,6 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -22,18 +25,62 @@ namespace RotFrontApplication.Pages
     /// </summary>
     public partial class ChangePass : Page
     {
+        private Users authData;
+
         public ChangePass(Users AuthData)
         {
             InitializeComponent();
+
+            this.authData = AuthData;
         }
 
         private void BtnChangePass_Click(object sender, RoutedEventArgs e)
         {
-            CheckPasswordStrength(PsbPass.Password);
-            if (PsbPass.Password != PsbAgPass.Password)
+            try
             {
-                MessageBox.Show("Пароли не совпадают!");
-                return;
+                //CheckPasswordStrength(PsbPass.Password);
+                if (PsbPass.Password != PsbAgPass.Password)
+                {
+                    MessageBox.Show("Пароли не совпадают!");
+                }
+                else
+                {
+                    Users users = new Users();
+                    users.id = authData.id;
+                    users.SNP = authData.SNP;
+                    users.Role_id = authData.Role_id;
+                    users.Login = authData.Login;
+                    string hashedPassword = HashPassword(PsbPass.Password);
+                    users.Password = hashedPassword;
+                    users.DateUpdatePass = Convert.ToDateTime(DateTime.Now);
+                    users.DateAdd = authData.DateAdd;
+                    ConnectionPoint.connectPoint.Users.AddOrUpdate(users);
+                    ConnectionPoint.connectPoint.SaveChanges();
+                    MessageBoxResult result = MessageBox.Show("Пароль изменен", "ERP: Складской учет", MessageBoxButton.OK);
+                    if (result == MessageBoxResult.OK)
+                    {
+                        NavigateClass.frmNav.Navigate(new AuthPage());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Критическая обработка");
+
+            }
+        }
+
+        private string HashPassword(string password)
+        {
+            using (MD5 md5Hash = MD5.Create())
+            {
+                byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder sBuilder = new StringBuilder();
+                for (int i = 0; i < data.Length; i++)
+                {
+                    sBuilder.Append(data[i].ToString("x2"));
+                }
+                return sBuilder.ToString();
             }
         }
 
@@ -94,10 +141,10 @@ namespace RotFrontApplication.Pages
             switch (score)
             {
                 case 0:
-                    Ind.Background = Brushes.Red;
+                    PsbPass.BorderBrush = Brushes.Red;
                     break;
                 case 1:
-                    Ind.Background = Brushes.Red;
+                    PsbPass.BorderBrush = Brushes.Orange;
                     break;
                 case 2:
                     PsbPass.BorderBrush = Brushes.Yellow;

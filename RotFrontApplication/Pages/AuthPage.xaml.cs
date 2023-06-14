@@ -54,8 +54,13 @@ namespace RotFrontApplication.Pages
                 }
                 else
                 {
-                    if (data.DateUpdatePass != null)
+                    if (data.Status != 0)
                     {
+                        MessageBox.Show("Упс( Ваш аккаунт заблокирован!");
+                    }
+                    else if (data.DateUpdatePass != null)
+                    {
+
                         switch (data.Role_id)
                         {
                             case 1:
@@ -81,7 +86,8 @@ namespace RotFrontApplication.Pages
                             LogTime = DateTime.Now,
                             PasswordEntryAttempts = failedAttempts,
                             Success = 1,
-                            CountBlockBtn = blockBtn
+                            CountBlockBtn = blockBtn,
+                            DateBlockBtn = DateTime.Now
                         };
 
                         ConnectionPoint.connectPoint.LogHistory.Add(log);
@@ -94,7 +100,11 @@ namespace RotFrontApplication.Pages
                         {
                             NavigateClass.frmNav.Navigate(new ChangePass(data));
                         }
-
+                        else if (result == MessageBoxResult.No)
+                        {
+                            NavigateClass.frmNav.Navigate(new AuthPage());
+                        }
+                        
                     }
 
 

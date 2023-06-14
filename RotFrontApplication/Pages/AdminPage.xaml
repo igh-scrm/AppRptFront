@@ -9,18 +9,21 @@
       Title="AdminPage">
 
     <Grid>
-        <StackPanel Width="600"
+        <StackPanel Width="700"
                     Height="400">
             <TextBlock
+                Margin="5"
                 FontSize="20"
                 FontWeight="Bold">
                 Мониторинг пользователей
             </TextBlock>
             <GroupBox>
                 <DataGrid 
+                    Height="300"
                     Name ="GridListUsers" 
                     AutoGenerateColumns="False" 
-                    IsReadOnly="True">
+                    IsReadOnly="True"
+                    >
                     <DataGrid.Columns>
                         <DataGridTextColumn
                             Header="Логин пользователя"
@@ -34,13 +37,18 @@
                             Header="Попытки входа"
                             Binding="{Binding PasswordEntryAttempts}" 
                             Width="*"/>
+                        <DataGridTextColumn
+                            Header="Количество блокировок"
+                            Binding="{Binding CountBlockBtn}" 
+                            Width="*"/>
                         <DataGridTemplateColumn Width="*">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
                                         <Button 
-                                            Name="BtnViewAccept"
-                                            Content="Посмотреть" 
+                                            Name="BtnBan"
+                                            Click="BtnBan_Click"
+                                            Content="Заблокировать" 
                                             BorderThickness="0"
                                             Background="#F5EEE6"
                                             />
@@ -49,8 +57,23 @@
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                     </DataGrid.Columns>
+                    
                 </DataGrid>
             </GroupBox>
+        </StackPanel>
+        <StackPanel>
+            <Button
+            Content="Назад"
+            Name="BtnBack"
+            Click="BtnBack_Click"
+            Width="50"
+            Height="20"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right"
+            Margin="30"
+            Background="#0776A0"
+            BorderBrush="#0776A0"
+            Foreground="#FFFFFF"/>
         </StackPanel>
         <StackPanel
             VerticalAlignment="Bottom"
@@ -59,7 +82,10 @@
             <Button
                 Content="ДОБАВИТЬ ПОЛЬЗОВАТЕЛЯ"
                 Name="AddUser"
-                Click="AddUser_Click"/>
+                Click="AddUser_Click"
+                Background="#0776A0"
+                Foreground="#FFFFFF"
+                BorderThickness="0"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -44,6 +44,7 @@ namespace RotFrontApplication.Pages
                 users.Password = hashedPassword;
                 users.DateAdd = DateTime.Now;
                 users.DateUpdatePass = null;
+                users.Status = 0;
                 ConnectionPoint.connectPoint.Users.AddOrUpdate(users);
                 ConnectionPoint.connectPoint.SaveChanges();
                 MessageBox.Show("Пользователь добавлен!");

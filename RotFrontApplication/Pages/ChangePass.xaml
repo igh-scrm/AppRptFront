@@ -12,6 +12,13 @@
         <StackPanel
             Width="300"
             Height="200">
+            <TextBlock
+                FontSize="20"
+                FontWeight="Bold"
+                Margin="5"
+                HorizontalAlignment="Center">
+                Измените пароль
+            </TextBlock>
             <GroupBox
                 Header="Введите пароль:"
                 Margin="5"
@@ -29,25 +36,6 @@
                 <PasswordBox
                     Name="PsbAgPass"/>
             </GroupBox>
-            <StackPanel
-                Margin="5"
-                Width="280"
-                Height="10">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="40*"/>
-                        <ColumnDefinition Width="40*"/>
-                        <ColumnDefinition Width="40*"/>
-                        <ColumnDefinition Width="40*"/>
-                        <ColumnDefinition Width="40*"/>
-                        <ColumnDefinition Width="40*"/>
-                        <ColumnDefinition Width="40*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="1"
-                          Name="Ind"
-                          Style="{StaticResource GridRedColor}"/>
-                </Grid>
-            </StackPanel>
             <Button
                 Margin="5"
                 Width="130"

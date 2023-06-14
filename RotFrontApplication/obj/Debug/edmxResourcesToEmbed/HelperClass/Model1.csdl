@@ -73,7 +73,6 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="LogHistory" EntitySet="LogHistory" />
     </AssociationSet>
-    <EntitySet Name="sysdiagrams" EntityType="DbDauevaModel.sysdiagrams" />
   </EntityContainer>
   <EntityType Name="Destination">
     <Key>
@@ -208,6 +207,7 @@
     <NavigationProperty Name="Sending" Relationship="DbDauevaModel.FK_Sending_Users" FromRole="Users" ToRole="Sending" />
     <NavigationProperty Name="Shipment" Relationship="DbDauevaModel.FK_Shipment_Users" FromRole="Users" ToRole="Shipment" />
     <NavigationProperty Name="LogHistory" Relationship="DbDauevaModel.FK_LogHistory_Users" FromRole="Users" ToRole="LogHistory" />
+    <Property Name="Status" Type="Byte" Nullable="false" />
   </EntityType>
   <Association Name="FK_Sending_Destination">
     <End Type="DbDauevaModel.Destination" Role="Destination" Multiplicity="1" />
@@ -392,6 +392,7 @@
     <Property Name="Success" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Users" Relationship="DbDauevaModel.FK_LogHistory_Users" FromRole="LogHistory" ToRole="Users" />
     <Property Name="CountBlockBtn" Type="Int32" Nullable="false" />
+    <Property Name="DateBlockBtn" Type="DateTime" Precision="0" />
   </EntityType>
   <Association Name="FK_LogHistory_Users">
     <End Type="DbDauevaModel.Users" Role="Users" Multiplicity="1" />
@@ -405,14 +406,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
 </Schema>

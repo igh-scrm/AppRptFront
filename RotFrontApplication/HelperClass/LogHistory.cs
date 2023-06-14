@@ -20,6 +20,7 @@ namespace RotFrontApplication.HelperClass
         public int PasswordEntryAttempts { get; set; }
         public int Success { get; set; }
         public int CountBlockBtn { get; set; }
+        public Nullable<System.DateTime> DateBlockBtn { get; set; }
     
         public virtual Users Users { get; set; }
     }
